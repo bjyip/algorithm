@@ -10,7 +10,7 @@ function BinaryTree() {
 BinaryTree.prototype.insert = function(val) {
   var treeNode = new TreeNode(val);
   function insertNode(root, node) {
-    if (root.val > node.val) {
+    if (root.val >= node.val) {
     // 左边
       if (!root.left) {
         root.left = node;
