@@ -3,6 +3,7 @@ var BinaryTree = require('./binaryTree').BinaryTree
 var binaryTree = new BinaryTree();
 binaryTree.insertBatch([2, 10, 5, 7])
 
+// BFS
 var levelOrder = function(root) {
   var res = []
   if (!root) {
@@ -21,4 +22,26 @@ var levelOrder = function(root) {
     }
   }
   return res
+}
+
+// DFS
+var levelOrder = function(root) {
+  var res = []
+  if (root) {
+    dfs(res, root, 0);
+  }
+  return res;
+}
+
+var dfs = function(res, node, level) {
+  if(res.length - 1 < level){
+    res.push([]);
+  }
+  res[level].push(node.val);
+  if(node.left){
+    dfs(res, node.left, level + 1);
+  }
+  if(node.right){
+    dfs(res, node.right, level + 1);
+  }
 }
