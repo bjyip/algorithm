@@ -8,6 +8,15 @@
     {
       "type": "node",
       "request": "launch",
+      "name": "minDepth",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceRoot}/tree/minDepth.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
       "name": "maxDepth",
       "skipFiles": [
         "<node_internals>/**"
