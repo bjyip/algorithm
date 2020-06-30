@@ -23,25 +23,28 @@ var treeNode = new GenerateTreeNode([3,9,20,null,null,15,7]);
 // };
 
 // DFS
-// var maxDepth = function(root) {
-//   if (!root) {
-//     return 0;
-//   }
-//   var steak = [];
-//   steak.push([1, root]);
-//   var level = 0;
-//   while (steak.length) {
-//     var cur = steak.pop();
-//     var curLevel = cur[0];
-//     var node = cur[1];
-//     if (node) {
-//       level = Math.max(level, curLevel);
-//       steak.push([curLevel + 1, node.left]);
-//       steak.push([curLevel + 1, node.right]);
-//     }
-//   }
-//   return level;
-// };
+var maxDepth = function(root) {
+  if (!root) {
+    return 0;
+  }
+  var steak = [[1, root]];
+  var level = 0;
+  while (steak.length) {
+    var cur = steak.pop();
+    var curLevel = cur[0];
+    var node = cur[1];
+    if (!node.left && !node.right) {
+      level = Math.max(level, curLevel);
+    }
+    if (node.left) {
+      steak.push([curLevel + 1, node.left]);
+    }
+    if (node.right) {
+      steak.push([curLevel + 1, node.right]);
+    }
+  }
+  return level;
+};
 
 
 // 分治
