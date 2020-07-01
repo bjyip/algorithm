@@ -4,54 +4,19 @@
   // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
-    // 二叉树
+    
+    /** ------------------------其他------------------------*/
+    // generateParenthesis
     {
       "type": "node",
       "request": "launch",
-      "name": "minDepth",
+      "name": "generateParenthesis",
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceRoot}/tree/minDepth.js"
+      "program": "${workspaceFolder}\\generateParenthesis.js"
     },
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "maxDepth",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
-      "program": "${workspaceRoot}/tree/maxDepth.js"
-    },
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "isValidBST",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
-      "program": "${workspaceRoot}/tree/isValidBST.js"
-    },
-    // 链表
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "reverse",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
-      "program": "${workspaceRoot}/linkList/reverse.js"
-    },
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "swapPairs",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
-      "program": "${workspaceRoot}/linkList/swapPairs.js"
-    },
-    // 其他
+    // 众数
     {
       "type": "node",
       "request": "launch",
@@ -61,6 +26,7 @@
       ],
       "program": "${workspaceFolder}\\majority.js"
     },
+    // 2的n次方
     {
       "type": "node",
       "request": "launch",
@@ -70,6 +36,7 @@
       ],
       "program": "${workspaceFolder}\\pow.js"
     },
+    // 买卖股票的最佳时机 II
     {
       "type": "node",
       "request": "launch",
@@ -78,6 +45,58 @@
         "<node_internals>/**"
       ],
       "program": "${workspaceFolder}\\maxProfit.js"
-    }
+    },
+    /** ------------------------二叉树------------------------*/
+    // 最小深度
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "minDepth",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceRoot}/tree/minDepth.js"
+    },
+    // 最大深度
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "maxDepth",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceRoot}/tree/maxDepth.js"
+    },
+    // 验证二叉搜索树
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "isValidBST",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceRoot}/tree/isValidBST.js"
+    },
+    /** ------------------------链表------------------------*/
+    // 反转链表
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "reverse",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceRoot}/linkList/reverse.js"
+    },
+    // 链表交换相邻元素
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "swapPairs",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceRoot}/linkList/swapPairs.js"
+    },
   ]
 }
