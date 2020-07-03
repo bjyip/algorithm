@@ -6,7 +6,17 @@
   "configurations": [
     
     /** ------------------------其他------------------------*/
-    // generateParenthesis
+    // 有效的数独
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "isValidSudoku",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}\\isValidSudoku.js"
+    },
+    // 生成有效括号组合
     {
       "type": "node",
       "request": "launch",
