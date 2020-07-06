@@ -6,6 +6,16 @@
   "configurations": [
     
     /** ------------------------其他------------------------*/
+    // x 的平方根
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "mySqrt",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}\\mySqrt.js"
+    },
     // 有效的数独
     {
       "type": "node",
