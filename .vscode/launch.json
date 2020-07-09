@@ -6,6 +6,16 @@
   "configurations": [
     
     /** ------------------------其他------------------------*/
+    // 2的幂
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "isPowerOfTwo",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}\\isPowerOfTwo.js"
+    },
     // x 的平方根
     {
       "type": "node",
