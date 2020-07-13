@@ -6,6 +6,16 @@
   "configurations": [
     
     /** ------------------------其他------------------------*/
+    // 位1的个数
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "hammingWeight",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/hammingWeight.js"
+    },
     // x 的平方根
     {
       "type": "node",
@@ -14,7 +24,7 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}\\mySqrt.js"
+      "program": "${workspaceFolder}/mySqrt.js"
     },
     // 有效的数独
     {
@@ -24,7 +34,7 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}\\isValidSudoku.js"
+      "program": "${workspaceFolder}/isValidSudoku.js"
     },
     // 生成有效括号组合
     {
@@ -34,7 +44,7 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}\\generateParenthesis.js"
+      "program": "${workspaceFolder}/generateParenthesis.js"
     },
     // 众数
     {
@@ -44,7 +54,7 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}\\majority.js"
+      "program": "${workspaceFolder}/majority.js"
     },
     // 2的n次方
     {
@@ -54,7 +64,7 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}\\pow.js"
+      "program": "${workspaceFolder}/pow.js"
     },
     // 买卖股票的最佳时机 II
     {
@@ -64,7 +74,7 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}\\maxProfit.js"
+      "program": "${workspaceFolder}/maxProfit.js"
     },
     /** ------------------------二叉树------------------------*/
     // 最小深度
