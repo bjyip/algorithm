@@ -15,6 +15,15 @@
         "<node_internals>/**"
       ],
       "program": "${workspaceFolder}/hammingWeight.js"
+    // 2的幂
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "isPowerOfTwo",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}\\isPowerOfTwo.js"
     },
     // x 的平方根
     {
