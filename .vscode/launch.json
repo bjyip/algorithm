@@ -6,15 +6,6 @@
   "configurations": [
     
     /** ------------------------其他------------------------*/
-    // 位1的个数
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "hammingWeight",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
-      "program": "${workspaceFolder}/hammingWeight.js"
     // 2的幂
     {
       "type": "node",
@@ -24,6 +15,16 @@
         "<node_internals>/**"
       ],
       "program": "${workspaceFolder}\\isPowerOfTwo.js"
+    },
+    // 位1的个数
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "hammingWeight",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/hammingWeight.js"
     },
     // x 的平方根
     {
