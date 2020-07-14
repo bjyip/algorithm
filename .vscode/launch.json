@@ -6,6 +6,16 @@
   "configurations": [
     
     /** ------------------------其他------------------------*/
+    // 数组中重复的数字
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "findRepeatNumber",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}\\findRepeatNumber.js"
+    },
     // 2的幂
     {
       "type": "node",
