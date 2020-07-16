@@ -128,6 +128,16 @@
       "program": "${workspaceRoot}/tree/isValidBST.js"
     },
     /** ------------------------链表------------------------*/
+    // 从尾到头打印链表
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "reversePrint",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceRoot}/linkList/reversePrint.js"
+    },
     // 反转链表
     {
       "type": "node",
