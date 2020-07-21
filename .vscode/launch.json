@@ -6,6 +6,16 @@
   "configurations": [
     
     /** ------------------------其他------------------------*/
+    // 斐波那契数列
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "fibonacci",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}\\fibonacci.js"
+    },
     // 数组中重复的数字
     {
       "type": "node",
