@@ -6,6 +6,16 @@
   "configurations": [
     
     /** ------------------------其他------------------------*/
+    // 青蛙跳台阶问题
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "numWays",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}\\numWays.js"
+    },
     // 斐波那契数列
     {
       "type": "node",
