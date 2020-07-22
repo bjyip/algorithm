@@ -12,12 +12,22 @@
 // };
 
 // 方法二
+// var hammingWeight = function(n) {
+//   var bits = 0;
+//   while (n !== 0) {
+//     bits++;
+//     n &= (n - 1);
+//   }
+//   return bits;
+// }
+
+// 方法三，js中有问题
 var hammingWeight = function(n) {
   var bits = 0;
   while (n !== 0) {
-    bits++;
-    n &= (n - 1);
+    bits += n & 1;
+    n >>= 1;
   }
   return bits;
 }
-console.log(hammingWeight('00000000000000000000000000001011'))
+console.log(hammingWeight('11111111111111111111111111111101'))
