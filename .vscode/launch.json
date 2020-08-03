@@ -6,6 +6,16 @@
   "configurations": [
     
     /** ------------------------其他------------------------*/
+    // 调整数组顺序使奇数位于偶数前面
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "exchange",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}\\exchange.js"
+    },
     // 打印从1到最大的n位数
     {
       "type": "node",
