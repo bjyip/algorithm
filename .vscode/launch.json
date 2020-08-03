@@ -168,6 +168,16 @@
       "program": "${workspaceRoot}/tree/isValidBST.js"
     },
     /** ------------------------链表------------------------*/
+    // 合并两个排序的链表
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "mergeTwoLists",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceRoot}/linkList/mergeTwoLists.js"
+    },
     // 从尾到头打印链表
     {
       "type": "node",
