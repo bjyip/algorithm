@@ -137,6 +137,16 @@
       "program": "${workspaceFolder}/maxProfit.js"
     },
     /** ------------------------二叉树------------------------*/
+    // 对称的二叉树
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "isSymmetric",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceRoot}/tree/isSymmetric.js"
+    },
     // 二叉树的镜像
     {
       "type": "node",
