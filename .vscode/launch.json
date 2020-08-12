@@ -6,6 +6,16 @@
   "configurations": [
     
     /** ------------------------其他------------------------*/
+    // 数组中出现次数超过一半的数字
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "majorityElement",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}\\majorityElement.js"
+    },
     // 调整数组顺序使奇数位于偶数前面
     {
       "type": "node",
