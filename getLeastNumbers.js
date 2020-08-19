@@ -3,62 +3,56 @@
  * @param {number} k
  * @return {number[]}
  */
-let getLeastNumbers = function (arr, k) {
+var getLeastNumbers = function (arr, k) {
   // 从 arr 中取出前 k 个数，构建一个大顶堆
-  let heap = [null], i = 0
-  while (i < k) {
-    heap.push(arr[i++])
-  }
-  buildHeap(heap, k)
-
+  var heap = [null].concat(arr.slice(0, k));
+  buildHeap(heap, k);
   // 从 k 位开始遍历数组
-  for (let i = k; i < arr.length; i++) {
+  for (var i = k; i < arr.length; i++) {
     if (heap[1] > arr[i]) {
+      heap[1] = arr[i];
       // 替换并堆化
-      heap[1] = arr[i]
-      heapify(heap, k, 1)
+      heapify(heap, k, 1);
     }
   }
-
   // 删除heap中第一个元素
-  heap.shift()
-  return heap
-};
+  heap.shift();
+  return heap;
+}
 
-// 原地建堆，从后往前，自上而下式建大顶堆
-let buildHeap = (arr, k) => {
-  if (k === 1) return
+// 建堆，从后往前，自上而下式建大顶堆
+var buildHeap = function(heap, k) {
   // 从最后一个非叶子节点开始，自上而下式堆化
-  for (let i = Math.floor(k / 2); i >= 1; i--) {
-    heapify(arr, k, i)
+  for (var i = Math.floor(k / 2); i >= 1; i--) {
+    heapify(heap, k, i);
   }
 }
 
 // 堆化
-let heapify = (arr, k, i) => {
+var heapify = function(heap, k, i) {
+  var maxIndex = i;
   // 自上而下式堆化
   while (true) {
-    let maxIndex = i
     // 比较子节点，把最大的上浮
-    if (2 * i <= k && arr[2 * i] > arr[i]) {
-      maxIndex = 2 * i
+    if (i * 2 <= k && heap[i * 2] > heap[maxIndex]) {
+      maxIndex = i * 2;
     }
-    if (2 * i + 1 <= k && arr[2 * i + 1] > arr[maxIndex]) {
-      maxIndex = 2 * i + 1
+    if (i * 2 + 1 <= k && heap[i * 2 + 1] > heap[maxIndex]) {
+      maxIndex = i * 2 + 1;
     }
     if (maxIndex !== i) {
-      swap(arr, i, maxIndex)
-      i = maxIndex
+      swap(heap, i, maxIndex);
+      i = maxIndex;
     } else {
-      break
+      break;
     }
   }
 }
 
 // 交换
-let swap = (arr, i, j) => {
-  let temp = arr[i]
-  arr[i] = arr[j]
-  arr[j] = temp
+var swap = function(arr, i, j) {
+  var temp = arr[i];
+  arr[i] = arr[j];
+  arr[j] = temp;
 }
 console.log(getLeastNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 7));
