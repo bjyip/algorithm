@@ -64,16 +64,16 @@ function partition(arr, start, end) {
   let left = start + 1,
     right = end;
   while (true) {
-    while (left <= end && arr[left] <= k) ++left;
-    while (right >= start + 1 && arr[right] >= k) --right;
+    while (left <= end && arr[left] <= k) left++;
+    while (right >= start + 1 && arr[right] >= k) right--;
 
     if (left >= right) {
       break;
     }
 
     [arr[left], arr[right]] = [arr[right], arr[left]];
-    ++left;
-    --right;
+    left++;
+    right--;
   }
   [arr[right], arr[start]] = [arr[start], arr[right]];
   return right;
