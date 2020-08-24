@@ -156,6 +156,16 @@
       ],
       "program": "${workspaceFolder}/maxProfit.js"
     },
+    // 验证二叉搜索树
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "isValidBST",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceRoot}/main/98.isValidBST.js"
+    },
     // 1.两数之和
     {
       "type": "node",
@@ -257,16 +267,7 @@
       ],
       "program": "${workspaceRoot}/tree/maxDepth.js"
     },
-    // 验证二叉搜索树
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "isValidBST",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
-      "program": "${workspaceRoot}/tree/isValidBST.js"
-    },
+    
     /** ------------------------链表------------------------*/
     // 合并两个排序的链表
     {
