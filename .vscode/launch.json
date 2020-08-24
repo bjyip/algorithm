@@ -156,6 +156,16 @@
       ],
       "program": "${workspaceFolder}/maxProfit.js"
     },
+    // 242.有效的括号
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "isAnagram",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceRoot}/main/242.isAnagram.js"
+    },
     // 20.有效的括号
     {
       "type": "node",
