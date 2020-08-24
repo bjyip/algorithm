@@ -1,4 +1,6 @@
-var BinaryTree = require('./binaryTree').BinaryTree
+// 二叉树的层序遍历
+
+var BinaryTree = require('../tree/binaryTree').BinaryTree
 
 var binaryTree = new BinaryTree();
 binaryTree.insertBatch([2, 10, 5, 7])
@@ -23,6 +25,12 @@ var levelOrder = function(root) {
   }
   return res
 }
+/**
+ * 复杂度分析
+ * 记树上所有节点的个数为 n。
+ * 时间复杂度：每个点进队出队各一次，故渐进时间复杂度为 O(n)。
+ * 空间复杂度：队列中元素的个数不超过 n 个，故渐进空间复杂度为 O(n)。
+ */
 
 // DFS
 var levelOrder = function(root) {

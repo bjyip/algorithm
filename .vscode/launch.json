@@ -136,7 +136,7 @@
       ],
       "program": "${workspaceFolder}/majority.js"
     },
-    // 2的n次方
+    // 二叉树的层序遍历
     {
       "type": "node",
       "request": "launch",
@@ -145,6 +145,16 @@
         "<node_internals>/**"
       ],
       "program": "${workspaceFolder}/pow.js"
+    },
+    // 102.二叉树的层序遍历
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "levelOrder",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/main/102.levelOrder.js"
     },
     // 买卖股票的最佳时机 II
     {
@@ -156,7 +166,7 @@
       ],
       "program": "${workspaceFolder}/main/122.maxProfit.js"
     },
-    // 多数元素
+    // 169.多数元素
     {
       "type": "node",
       "request": "launch",
@@ -166,7 +176,7 @@
       ],
       "program": "${workspaceRoot}/main/169.majorityElement.js"
     },
-    // 计算 x 的 n 次幂函数
+    // 50.计算 x 的 n 次幂函数
     {
       "type": "node",
       "request": "launch",
@@ -176,7 +186,7 @@
       ],
       "program": "${workspaceRoot}/main/50.myPow.js"
     },
-    // 验证二叉搜索树
+    // 98.验证二叉搜索树
     {
       "type": "node",
       "request": "launch",
