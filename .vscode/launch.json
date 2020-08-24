@@ -6,6 +6,16 @@
   "configurations": [
     
     /** ------------------------剑指offer------------------------*/
+    // 17.打印从1到最大的n位数
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "printNumbers",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}\\offer/17.printNumbers.js"
+    },
     // 10-ii.青蛙跳台阶问题
     {
       "type": "node",
@@ -77,16 +87,7 @@
       ],
       "program": "${workspaceFolder}\\exchange.js"
     },
-    // 打印从1到最大的n位数
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "printNumbers",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
-      "program": "${workspaceFolder}\\printNumbers.js"
-    },
+    
     
     
     
