@@ -6,6 +6,16 @@
   "configurations": [
     
     /** ------------------------剑指offer------------------------*/
+    // 28.对称的二叉树
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "isSymmetric",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceRoot}/offer/28.isSymmetric.js"
+    },
     // 27.二叉树的镜像
     {
       "type": "node",
@@ -328,16 +338,7 @@
       "program": "${workspaceRoot}/main/206.reverseList.js"
     },
     /** ------------------------二叉树------------------------*/
-    // 对称的二叉树
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "isSymmetric",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
-      "program": "${workspaceRoot}/tree/isSymmetric.js"
-    },
+    
     
     
     
