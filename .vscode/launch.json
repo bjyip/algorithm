@@ -156,6 +156,16 @@
       ],
       "program": "${workspaceFolder}/maxProfit.js"
     },
+    // 计算 x 的 n 次幂函数
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "myPow",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceRoot}/main/50.myPow.js"
+    },
     // 验证二叉搜索树
     {
       "type": "node",
