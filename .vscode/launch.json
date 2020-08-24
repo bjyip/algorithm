@@ -6,6 +6,16 @@
   "configurations": [
     
     /** ------------------------剑指offer------------------------*/
+    // 25.合并两个排序的链表
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "mergeTwoLists",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceRoot}/offer/25.mergeTwoLists.js"
+    },
     // 21.调整数组顺序使奇数位于偶数前面
     {
       "type": "node",
@@ -332,15 +342,6 @@
     
     
     /** ------------------------链表------------------------*/
-    // 合并两个排序的链表
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "mergeTwoLists",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
-      "program": "${workspaceRoot}/linkList/mergeTwoLists.js"
-    }
+    
   ]
 }
