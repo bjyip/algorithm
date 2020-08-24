@@ -18,6 +18,11 @@ var isValidSudoku = function(board) {
   }
   return true;
 }
+/**
+ * 复杂度分析
+ * 时间复杂度：O(1)，因为我们只对 81 个单元格进行了一次迭代。
+ * 空间复杂度：O(1)。
+ */
 
 console.log(isValidSudoku([
   ["8","3",".",".","7",".",".",".","."],

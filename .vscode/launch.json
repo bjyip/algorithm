@@ -106,16 +106,7 @@
       ],
       "program": "${workspaceFolder}/mySqrt.js"
     },
-    // 有效的数独
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "isValidSudoku",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
-      "program": "${workspaceFolder}/isValidSudoku.js"
-    },
+    
     
     // 众数
     {
@@ -136,6 +127,16 @@
         "<node_internals>/**"
       ],
       "program": "${workspaceFolder}/pow.js"
+    },
+    // 36.有效的数独
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "isValidSudoku",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/main/36.isValidSudoku.js"
     },
     // 22.生成有效括号组合
     {
