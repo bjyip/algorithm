@@ -1,3 +1,5 @@
+// 22.生成有效括号组合
+
 // 暴力递归
 var generateParenthesis = function(n) {
   var generate = function(A) {

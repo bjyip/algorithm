@@ -1,3 +1,4 @@
+// 36.有效的数独
 var isValidSudoku = function(board) {
   var rows = {};
   var cols = {};
