@@ -156,7 +156,17 @@
       ],
       "program": "${workspaceFolder}/maxProfit.js"
     },
-    // 环形链表
+    // 20.有效的括号
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "isValid",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceRoot}/main/20.isValid.js"
+    },
+    // 141.环形链表
     {
       "type": "node",
       "request": "launch",
@@ -166,7 +176,7 @@
       ],
       "program": "${workspaceRoot}/main/141.hasCycle.js"
     },
-    // 两两交换链表中的节点
+    // 24.两两交换链表中的节点
     {
       "type": "node",
       "request": "launch",
@@ -176,7 +186,7 @@
       ],
       "program": "${workspaceRoot}/main/24.swapPairs.js"
     },
-    // 反转链表
+    // 206.反转链表
     {
       "type": "node",
       "request": "launch",
