@@ -6,6 +6,16 @@
   "configurations": [
     
     /** ------------------------剑指offer------------------------*/
+    // 18.删除链表的节点
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "deleteNode",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceRoot}/offer/18.deleteNode.js"
+    },
     // 17.打印从1到最大的n位数
     {
       "type": "node",
@@ -330,19 +340,6 @@
         "<node_internals>/**"
       ],
       "program": "${workspaceRoot}/linkList/mergeTwoLists.js"
-    },
-    
-    
-    
-    // 删除链表的节点
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "deleteNode",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
-      "program": "${workspaceRoot}/linkList/deleteNode.js"
-    },
+    }
   ]
 }
