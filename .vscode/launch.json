@@ -156,6 +156,16 @@
       ],
       "program": "${workspaceFolder}/maxProfit.js"
     },
+    // 环形链表
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "hasCycle",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceRoot}/main/141.hasCycle.js"
+    },
     // 两两交换链表中的节点
     {
       "type": "node",
