@@ -86,16 +86,7 @@
       ],
       "program": "${workspaceFolder}\\isPowerOfTwo.js"
     },
-    // 位1的个数
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "hammingWeight",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
-      "program": "${workspaceFolder}/hammingWeight.js"
-    },
+    
     
     
     
@@ -118,6 +109,16 @@
         "<node_internals>/**"
       ],
       "program": "${workspaceFolder}/pow.js"
+    },
+    // 位1的个数
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "hammingWeight",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/main/191.hammingWeight.js"
     },
     // 69.x 的平方根
     {
