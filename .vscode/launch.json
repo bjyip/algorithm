@@ -6,6 +6,16 @@
   "configurations": [
     
     /** ------------------------剑指offer------------------------*/
+    // 27.二叉树的镜像
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "mirrorTree",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceRoot}/offer/27.mirrorTree.js"
+    },
     // 25.合并两个排序的链表
     {
       "type": "node",
@@ -328,16 +338,7 @@
       ],
       "program": "${workspaceRoot}/tree/isSymmetric.js"
     },
-    // 二叉树的镜像
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "mirrorTree",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
-      "program": "${workspaceRoot}/tree/mirrorTree.js"
-    },
+    
     
     
     
