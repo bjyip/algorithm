@@ -76,16 +76,7 @@
       ],
       "program": "${workspaceFolder}\\findRepeatNumber.js"
     },
-    // 2的幂
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "isPowerOfTwo",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
-      "program": "${workspaceFolder}\\isPowerOfTwo.js"
-    },
+    
     
     
     
@@ -119,6 +110,16 @@
         "<node_internals>/**"
       ],
       "program": "${workspaceFolder}/main/191.hammingWeight.js"
+    },
+    // 231.2的幂
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "isPowerOfTwo",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}\\main/231.isPowerOfTwo.js"
     },
     // 69.x 的平方根
     {
