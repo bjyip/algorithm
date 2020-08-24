@@ -26,6 +26,16 @@
       ],
       "program": "${workspaceFolder}\\offer/10-1.fibonacci.js"
     },
+    // 03.数组中重复的数字
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "findRepeatNumber",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}\\offer/03.findRepeatNumber.js"
+    },
     /** ------------------------主站------------------------*/
     // 最小的k个数
     {
@@ -78,16 +88,7 @@
       "program": "${workspaceFolder}\\numWays.js"
     },
     
-    // 数组中重复的数字
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "findRepeatNumber",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
-      "program": "${workspaceFolder}\\findRepeatNumber.js"
-    },
+    
     
     
     
