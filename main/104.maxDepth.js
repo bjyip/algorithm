@@ -1,4 +1,6 @@
 // 二叉树的最大深度
+// https://blog.csdn.net/Mr_SCX/article/details/105456531
+
 var GenerateTreeNode = require('../tree/binaryTree').GenerateTreeNode
 
 var treeNode = new GenerateTreeNode([3,9,20,null,null,15,7]);
