@@ -156,6 +156,16 @@
       ],
       "program": "${workspaceFolder}/maxProfit.js"
     },
+    // 1.两数之和
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "twoSum",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceRoot}/main/1.twoSum.js"
+    },
     // 242.有效的括号
     {
       "type": "node",
