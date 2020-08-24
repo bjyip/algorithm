@@ -146,6 +146,16 @@
       ],
       "program": "${workspaceFolder}/pow.js"
     },
+    // 最大深度
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "maxDepth",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceRoot}/main/104.maxDepth.js"
+    },
     // 102.二叉树的层序遍历
     {
       "type": "node",
@@ -287,16 +297,7 @@
       ],
       "program": "${workspaceRoot}/tree/minDepth.js"
     },
-    // 最大深度
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "maxDepth",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
-      "program": "${workspaceRoot}/tree/maxDepth.js"
-    },
+    
     
     /** ------------------------链表------------------------*/
     // 合并两个排序的链表
