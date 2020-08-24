@@ -4,8 +4,8 @@
   // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
-    
     /** ------------------------剑指offer------------------------*/
+
     // 40.最小的k个数
     {
       "type": "node",
@@ -117,47 +117,7 @@
       "program": "${workspaceFolder}\\offer/03.findRepeatNumber.js"
     },
     /** ------------------------主站------------------------*/
-    
-    // 数组中出现次数超过一半的数字
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "majorityElement",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
-      "program": "${workspaceFolder}\\majorityElement.js"
-    },
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    // 众数
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "majority",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
-      "program": "${workspaceFolder}/majority.js"
-    },
-    // 二叉树的层序遍历
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "pow",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
-      "program": "${workspaceFolder}/pow.js"
-    },
+
     // 位1的个数
     {
       "type": "node",
@@ -338,13 +298,5 @@
       ],
       "program": "${workspaceRoot}/main/206.reverseList.js"
     },
-    /** ------------------------二叉树------------------------*/
-    
-    
-    
-    
-    
-    /** ------------------------链表------------------------*/
-    
   ]
 }
