@@ -6,7 +6,27 @@
   "configurations": [
     
     /** ------------------------剑指offer------------------------*/
-    // 从尾到头打印链表
+    // 10-ii.青蛙跳台阶问题
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "numWays",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}\\offer/10-ii.numWays.js"
+    },
+    // 10-i.斐波那契数列
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "fibonacci",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}\\offer/10-i.fibonacci.js"
+    },
+    // 06.从尾到头打印链表
     {
       "type": "node",
       "request": "launch",
@@ -15,16 +35,6 @@
         "<node_internals>/**"
       ],
       "program": "${workspaceRoot}/offer/06.reversePrint.js"
-    },
-    // 斐波那契数列
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "fibonacci",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
-      "program": "${workspaceFolder}\\offer/10-1.fibonacci.js"
     },
     // 03.数组中重复的数字
     {
@@ -77,16 +87,7 @@
       ],
       "program": "${workspaceFolder}\\printNumbers.js"
     },
-    // 青蛙跳台阶问题
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "numWays",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
-      "program": "${workspaceFolder}\\numWays.js"
-    },
+    
     
     
     
