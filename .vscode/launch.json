@@ -5,6 +5,17 @@
   "version": "0.2.0",
   "configurations": [
     
+    /** ------------------------剑指offer------------------------*/
+    // 斐波那契数列
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "fibonacci",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}\\offer/10-1.fibonacci.js"
+    },
     /** ------------------------主站------------------------*/
     // 最小的k个数
     {
@@ -56,16 +67,7 @@
       ],
       "program": "${workspaceFolder}\\numWays.js"
     },
-    // 斐波那契数列
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "fibonacci",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
-      "program": "${workspaceFolder}\\fibonacci.js"
-    },
+    
     // 数组中重复的数字
     {
       "type": "node",
