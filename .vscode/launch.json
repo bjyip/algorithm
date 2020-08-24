@@ -156,6 +156,16 @@
       ],
       "program": "${workspaceFolder}/maxProfit.js"
     },
+    // 两两交换链表中的节点
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "swapPairs",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceRoot}/main/24.swapPairs.js"
+    },
     // 反转链表
     {
       "type": "node",
@@ -239,16 +249,7 @@
       "program": "${workspaceRoot}/linkList/reversePrint.js"
     },
     
-    // 链表交换相邻元素
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "swapPairs",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
-      "program": "${workspaceRoot}/linkList/swapPairs.js"
-    },
+    
     // 删除链表的节点
     {
       "type": "node",
