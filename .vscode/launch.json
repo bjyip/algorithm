@@ -156,6 +156,16 @@
       ],
       "program": "${workspaceFolder}/maxProfit.js"
     },
+    // 多数元素
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "majorityElement",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceRoot}/main/169.majorityElement.js"
+    },
     // 计算 x 的 n 次幂函数
     {
       "type": "node",
