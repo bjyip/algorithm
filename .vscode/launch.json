@@ -6,6 +6,16 @@
   "configurations": [
     
     /** ------------------------剑指offer------------------------*/
+    // 21.调整数组顺序使奇数位于偶数前面
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "exchange",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}\\offer/21.exchange.js"
+    },
     // 18.删除链表的节点
     {
       "type": "node",
@@ -87,16 +97,7 @@
       ],
       "program": "${workspaceFolder}\\majorityElement.js"
     },
-    // 调整数组顺序使奇数位于偶数前面
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "exchange",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
-      "program": "${workspaceFolder}\\exchange.js"
-    },
+    
     
     
     
