@@ -154,7 +154,7 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}/maxProfit.js"
+      "program": "${workspaceFolder}/main/122.maxProfit.js"
     },
     // 多数元素
     {
