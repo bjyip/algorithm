@@ -118,6 +118,16 @@
     },
     /** ------------------------主站------------------------*/
 
+    // 235.二叉搜索树的最近公共祖先
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "lowestCommonAncestor",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/main/235.lowestCommonAncestor.js"
+    },
     // 位1的个数
     {
       "type": "node",
