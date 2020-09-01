@@ -6,6 +6,16 @@
   "configurations": [
     /** ------------------------剑指offer------------------------*/
 
+    // 42.第一个只出现一次的字符
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "firstUniqChar",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}\\offer/50.firstUniqChar.js"
+    },
     // 42.连续子数组的最大和
     {
       "type": "node",
