@@ -6,6 +6,16 @@
   "configurations": [
     /** ------------------------剑指offer------------------------*/
 
+    // 42.连续子数组的最大和
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "maxSubArray",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}\\offer/42.maxSubArray.js"
+    },
     // 40.最小的k个数
     {
       "type": "node",
