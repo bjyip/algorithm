@@ -6,6 +6,16 @@
   "configurations": [
     /** ------------------------剑指offer------------------------*/
 
+    // 53-i.在排序数组中查找数字
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "search",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}\\offer/53-i.search.js"
+    },
     // 52.两个链表的第一个公共节点
     {
       "type": "node",
