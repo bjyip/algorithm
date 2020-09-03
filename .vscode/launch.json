@@ -6,6 +6,16 @@
   "configurations": [
     /** ------------------------剑指offer------------------------*/
 
+    // 52.两个链表的第一个公共节点
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "getIntersectionNode",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}\\offer/52.getIntersectionNode.js"
+    },
     // 42.第一个只出现一次的字符
     {
       "type": "node",
