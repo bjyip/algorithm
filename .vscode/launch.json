@@ -6,6 +6,16 @@
   "configurations": [
     /** ------------------------剑指offer------------------------*/
 
+    // 53-ii.0～n-1中缺失的数字
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "missingNumber",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}\\offer/53-ii.missingNumber.js"
+    },
     // 53-i.在排序数组中查找数字
     {
       "type": "node",
