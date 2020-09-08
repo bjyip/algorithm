@@ -43,7 +43,6 @@ var maxDepth = function(root) {
     if (!node.left && !node.right) {
       level = Math.max(level, curLevel);
     }
-    console.log(node.val)
     if (node.right) {
       stack.push([curLevel + 1, node.right]);
     }
@@ -73,9 +72,3 @@ var maxDepth = function(root) {
  */
 
 console.log(maxDepth(treeNode))
-
-function DFS(root) {
-  if (!root) {
-    return 0;
-  }
-}
