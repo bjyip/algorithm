@@ -29,25 +29,26 @@ var maxDepth = function(root) {
  * 空间复杂度：此方法空间的消耗取决于队列存储的元素数量，其在最坏情况下会达到 O(n)。
  */
 
-// DFS
+// DFS（栈、前序遍历）
 var maxDepth = function(root) {
   if (!root) {
     return 0;
   }
-  var steak = [[1, root]];
+  var stack = [[1, root]];
   var level = 0;
-  while (steak.length) {
-    var cur = steak.pop();
+  while (stack.length) {
+    var cur = stack.pop();
     var curLevel = cur[0];
     var node = cur[1];
     if (!node.left && !node.right) {
       level = Math.max(level, curLevel);
     }
-    if (node.left) {
-      steak.push([curLevel + 1, node.left]);
-    }
+    console.log(node.val)
     if (node.right) {
-      steak.push([curLevel + 1, node.right]);
+      stack.push([curLevel + 1, node.right]);
+    }
+    if (node.left) {
+      stack.push([curLevel + 1, node.left]);
     }
   }
   return level;
@@ -58,12 +59,12 @@ var maxDepth = function(root) {
  * 空间复杂度：此方法空间的消耗取决于队列存储的元素数量，其在最坏情况下会达到 O(n)。
  */
 
-// 分治（递归）
+// DFS（递归、后序遍历）/分治
 var maxDepth = function(root) {
   if (!root) {
     return 0;
   }
-  return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1
+  return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
 };
 /**
  * 复杂度分析
@@ -72,3 +73,9 @@ var maxDepth = function(root) {
  */
 
 console.log(maxDepth(treeNode))
+
+function DFS(root) {
+  if (!root) {
+    return 0;
+  }
+}
