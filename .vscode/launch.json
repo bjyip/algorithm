@@ -6,6 +6,16 @@
   "configurations": [
     /** ------------------------剑指offer------------------------*/
 
+    // 54.二叉搜索树的第k大节点
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "kthLargest",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}\\offer/54.kthLargest.js"
+    },
     // 53-ii.0～n-1中缺失的数字
     {
       "type": "node",
