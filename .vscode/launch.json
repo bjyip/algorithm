@@ -6,6 +6,16 @@
   "configurations": [
     /** ------------------------剑指offer------------------------*/
 
+    // 55-ii.平衡二叉树
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "isBalanced",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}\\offer/55-ii.isBalanced.js"
+    },
     // 54.二叉搜索树的第k大节点
     {
       "type": "node",
