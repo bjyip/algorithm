@@ -5,7 +5,16 @@
   "version": "0.2.0",
   "configurations": [
     /** ------------------------剑指offer------------------------*/
-
+    // 57.和为s的两个数字
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "twoSum",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}\\offer/57.twoSum.js"
+    },
     // 55-ii.平衡二叉树
     {
       "type": "node",
