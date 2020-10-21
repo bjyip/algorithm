@@ -5,6 +5,16 @@
   "version": "0.2.0",
   "configurations": [
     /** ------------------------剑指offer------------------------*/
+    // 58-ii.左旋转字符串
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "reverseLeftWords",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}\\offer/58-ii.reverseLeftWords.js"
+    },
     // 57.和为s的两个数字
     {
       "type": "node",
