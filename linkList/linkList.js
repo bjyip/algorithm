@@ -45,14 +45,15 @@ LinkList.prototype.delete = function (index) {
     this.head = this.head.next;
   } else {
     var currIndex = 0;
-    while (this.head) {
+    var current = this.head;
+    while (current) {
       if (currIndex + 1 === index) {
-        this.head.next = this.head.next.next;
+        current.next = current.next.next;
         this.length--
         return this.head;
       }
       currIndex++;
-      this.head = this.head.next;
+      current = current.next;
     }
   }
 }
