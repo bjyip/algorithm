@@ -10,13 +10,17 @@ linkList.appendBatch([1, 2, 3, 4, 5])
 
 // 递归
 var swapPairs = function(head) {
+  // 终止条件：链表中没有节点，或者链表中只有一个节点，无法再交换
   if (!head || !head.next) {
     return head;
   }
-  var firstNode = head, secondNode = head.next;
-  firstNode.next = swapPairs(secondNode.next)
-  secondNode.next = firstNode
-  return secondNode;
+  var newHead = head.next;
+  // 将其余节点进行两两交换，交换后的新的头节点为 head 的下一个节点
+  head.next = swapPairs(newHead.next)
+  // 将第二个与第一个交换
+  newHead.next = head
+  // 返回新的链表的头节点
+  return newHead;
 };
 /**
  * 复杂度分析
