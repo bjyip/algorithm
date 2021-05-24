@@ -32,17 +32,16 @@ var swapPairs = function(head) {
 var swapPairs = function(head) {
   var dummy = new ListNode(-1);
   dummy.next = head;
-  var prevNode = dummy;
-  while (head && head.next) {
-    var firstNode = head;
-    var secondNode = head.next;
+  var temp = dummy;
+  while (temp.next && temp.next.next) {
+    var firstNode = temp.next;
+    var secondNode = temp.next.next;
     // 交换
     firstNode.next = secondNode.next;
     secondNode.next = firstNode
-    prevNode.next = secondNode;
-    // 为下一次交换重新初始化头和prevNode
-    prevNode = firstNode;
-    head = firstNode.next
+    temp.next = secondNode;
+    // 为下一次交换重新初始化头和temp
+    temp = firstNode;
   }
   return dummy.next
 }
