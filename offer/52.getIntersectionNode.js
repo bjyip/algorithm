@@ -22,7 +22,7 @@ var getIntersectionNode = function(headA, headB) {
   while (headA) {
     var temp = headB;
     while (temp) {
-      if (headA === temp) {
+      if (JSON.stringify(headA) === JSON.stringify(temp)) {
         return headA;
       }
       temp = temp.next;
@@ -84,7 +84,7 @@ var getIntersectionNode = function(headA, headB) {
 // 双指针
 var getIntersectionNode = function(headA, headB) {
   var tA = headA, tB = headB;
-  while (tA !== tB) {
+  while (JSON.stringify(pA) !== JSON.stringify(pB)) {
     tA = tA ? tA.next : headB;
     tB = tB ? tB.next : headA;
   }
