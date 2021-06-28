@@ -1,10 +1,14 @@
 // 10- II. 青蛙跳台阶问题
 
+
+// 一只青蛙一次可以跳上1级台阶，也可以跳上2级台阶。求该青蛙跳上一个 n 级的台阶总共有多少种跳法。
+// 答案需要取模 1e9+7（1000000007），如计算初始结果为：1000000008，请返回 1。
+
 /**
  * @param {number} n
  * @return {number}
  */
-// 递归
+// 递归（分治）
 var numWays = function(n) {
   if (n <= 1) {
     return 1;
@@ -18,18 +22,18 @@ var numWays = function(n) {
  */
 
 // 记忆化递归
-var hash = {};
 var numWays = function(n) {
-  if (n <= 1) {
-    return 1;
-  }
-  if (hash[n]) {
-    return hash[n];
-  } else {
-    hash[n] = (numWays(n - 1) + numWays(n - 2)) % 1000000007;
+  var hash = {}
+  function recursion(n) {
+    if (n <= 1) {
+      return 1
+    }
+    if (hash[n]) return hash[n]
+    hash[n] = (recursion(n - 1) + recursion(n - 2)) % 1000000007
     return hash[n]
   }
-};
+  return recursion(n)
+}
 /**
  * 复杂度分析：
  * 时间复杂度 O(N)。
@@ -38,7 +42,7 @@ var numWays = function(n) {
 
 // 动态规划
 var numWays = function(n) {
-  var a = 0, b = 1, sum;
+  var a = 1, b = 1, sum;
   for (let i = 0; i < n; i++) {
     sum = (a + b) % 1000000007;
     a = b;
