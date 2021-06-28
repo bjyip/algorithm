@@ -18,10 +18,14 @@ var getLeastNumbers = function (arr, k) {
 
 // 方法二：大顶堆
 var getLeastNumbers = function (arr, k) {
-  // 从 arr 中取出前 k 个数，构建一个大顶堆
+  // 从 arr 中取出前 k 个数，从后往前，自上而下式建大顶堆
   var heap = [null].concat(arr.slice(0, k));
-  buildHeap(heap, k);
-  // 从 k 位开始遍历数组
+  // 从最后一个非叶子节点（数组中间）开始，自上而下式堆化
+  for (var i = Math.floor(k / 2); i >= 1; i--) {
+    heapify(heap, k, i);
+  }
+
+  // 处理k后面的数据，从 k 位开始遍历数组
   for (var i = k; i < arr.length; i++) {
     if (heap[1] > arr[i]) {
       heap[1] = arr[i];
@@ -32,14 +36,6 @@ var getLeastNumbers = function (arr, k) {
   // 删除heap中第一个元素
   heap.shift();
   return heap;
-}
-
-// 建堆，从后往前，自上而下式建大顶堆
-var buildHeap = function(heap, k) {
-  // 从最后一个非叶子节点开始，自上而下式堆化
-  for (var i = Math.floor(k / 2); i >= 1; i--) {
-    heapify(heap, k, i);
-  }
 }
 
 // 堆化
@@ -55,7 +51,10 @@ var heapify = function(heap, k, i) {
       maxIndex = i * 2 + 1;
     }
     if (maxIndex !== i) {
-      swap(heap, i, maxIndex);
+      // 交换
+      var temp = heap[i]
+      heap[i] = heap[j]
+      heap[j] = temp
       i = maxIndex;
     } else {
       break;
@@ -63,12 +62,6 @@ var heapify = function(heap, k, i) {
   }
 }
 
-// 交换
-var swap = function(arr, i, j) {
-  var temp = arr[i];
-  arr[i] = arr[j];
-  arr[j] = temp;
-}
 /**
  * 复杂度分析
  * 时间复杂度：O(nlogk)，其中 n 是数组 arr 的长度。由于大根堆实时维护前 k 小值，所以插入删除都是 O(logk) 的时间复杂度，最坏情况下数组里 n 个数都会插入，所以一共需要 O(nlogk) 的时间复杂度。
