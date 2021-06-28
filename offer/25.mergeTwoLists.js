@@ -38,6 +38,6 @@ var mergeTwoLists = function(l1, l2) {
 /**
  * 复杂度分析：
  * 时间复杂度 O(M+N) ： M, N 分别为链表 l1, l2 的长度，合并操作需遍历两链表。
- * 空间复杂度 O(1)O(1) ： 节点引用 dum , cur 使用常数大小的额外空间。
+ * 空间复杂度 O(1) ： 节点引用 dum , cur 使用常数大小的额外空间。
  */
 console.log(mergeTwoLists(linkList1.head, linkList2.head))
