@@ -4,6 +4,17 @@
   // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
+    /** ------------------------其他------------------------*/
+    // 实现add函数使得一下表达式的值正确
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "add",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}\\other/add.js"
+    },
     /** ------------------------剑指offer------------------------*/
     // 58-ii.左旋转字符串
     {
