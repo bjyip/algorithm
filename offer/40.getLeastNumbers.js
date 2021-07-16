@@ -53,8 +53,8 @@ var heapify = function(heap, k, i) {
     if (maxIndex !== i) {
       // 交换
       var temp = heap[i]
-      heap[i] = heap[j]
-      heap[j] = temp
+      heap[i] = heap[maxIndex]
+      heap[maxIndex] = temp
       i = maxIndex;
     } else {
       break;
