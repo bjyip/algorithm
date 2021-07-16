@@ -1,0 +1,1 @@
+// 实现event类，有on，off，emit，once方法
