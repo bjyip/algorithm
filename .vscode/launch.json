@@ -114,7 +114,7 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}\\offer/10.getLeastNumbers.js"
+      "program": "${workspaceFolder}\\offer/40.getLeastNumbers.js"
     },
     // 28.对称的二叉树
     {
