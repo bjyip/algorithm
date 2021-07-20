@@ -1,6 +1,8 @@
 /**
  * 54.二叉搜索树的第k大节点
  * 给定一棵二叉搜索树，请找出其中第k大的节点。
+ * 限制：1 ≤ k ≤ 二叉搜索树元素个数
+ * 
  * Definition for a binary tree node.
  * function TreeNode(val) {
  *     this.val = val;
@@ -15,19 +17,23 @@ var treeNode = new GenerateTreeNode([3,1,4,null,2]);
  * @param {number} k
  * @return {number}
  */
-var res, c;
+// 形参k不能随着dfs的迭代而不断变化，为了记录迭代进程和结果，引入类变量c和res。
+var res, c
+var dfs = function(root) {
+  if (!root) return
+  dfs(root.right)
+  // c等于0就找到目标，不再进行递归
+  if (c === 0) return
+  // 先--，再判断，等于0就找到目标
+  if (--c === 0) res = root.val
+  dfs(root.left)
+}
 var kthLargest = function(root, k) {
-  c = k;
-  dfs(root);
-  return res;
-};
-
-var dfs = function(root, k) {
-  if (!root) return;
-  dfs(root.right);
-  if (k === 0) return;
-  if (--c === 0) res = root.val;
-  dfs(root.left);
+  // 利用形参值k对类变量c进行初始化
+  c = k
+  // 这里不要引入形参k，dfs中直接使用的是初始值为k的类变量c
+  dfs(root)
+  return res
 }
 /**
  * 复杂度分析：
@@ -36,6 +42,6 @@ var dfs = function(root, k) {
 
  * 本文解法基于此性质：二叉搜索树的中序遍历为 递增序列 。
  * 根据以上性质，易得二叉搜索树的 中序遍历倒序 为 递减序列 。
- * 因此，求 “二叉搜索树第 kk 大的节点” 可转化为求 “此树的中序遍历倒序的第 kk 个节点”。
+ * 因此，求 “二叉搜索树第 k 大的节点” 可转化为求 “此树的中序遍历倒序的第 k 个节点”。
  */
-console.log(kthLargest(treeNode, 1))
+console.log(kthLargest(treeNode, 2))
