@@ -53,23 +53,23 @@ var myPow = function(x, n) {
 // 单函数迭代
 var myPow = function(x, n) {
   if (n === 0) {
-      return 1;
+    return 1;
   }
   if (n < 0) {
-      x = 1 / x;
-      n = -n;
+    x = 1 / x;
+    n = -n;
   }
   var sum = 1;
-  while (n > 1) {
-      if (n % 2) {
-          sum *= x;
-          n--
-      } else {
-          x *= x;
-          n = n / 2
-      }
+  while (n > 0) {
+    if (n % 2) {
+      sum *= x;
+      n--
+    } else {
+      x *= x;
+      n = n / 2
+    }
   }
-  return sum * x;
+  return sum;
 }
 /**
  * 复杂度分析
