@@ -7,16 +7,21 @@ binaryTree.insertBatch([2, 10, 5, 7])
 
 // 中序遍历
 var isValidBST = function(root) {
-  if (root.left && root.val < root.left.val || root.right && root.val > root.right.val) {
-    return false
+  var arr = [], inOrder = - Infinity;
+  while (arr.length || root) {
+    while (root) {
+      arr.push(root);
+      root = root.left;
+    }
+    root = arr.pop();
+    // 如果中序遍历得到的节点的值小于等于前一个 inorder，说明不是二叉搜索树
+    if (root.val <= inOrder) {
+      return false;
+    }
+    inOrder = root.val;
+    root = root.right;
   }
-  if (root.left) {
-    isValidBST(root.left)
-  }
-  if (root.right) {
-    isValidBST(root.right)
-  }
-  return true
+  return true;
 };
 /**
  * 复杂度分析
