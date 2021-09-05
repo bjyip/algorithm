@@ -6,7 +6,7 @@ Function.prototype.myBind = function(context, ...args) {
   const Temp = function() {}
   const bound = function() {
     // 如果bound函数作为构造函数被new调用，this应该指向bound的实例
-    self.apply(this instanceof Temp ? this : context || window, [...args, ...arguments])
+    self.apply(this instanceof Temp ? this : context, [...args, ...arguments])
   }
   // 维护原型关系
   Temp.prototype = self.prototype
