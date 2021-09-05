@@ -11,3 +11,5 @@ Function.prototype.myApply = function(context, arg) {
   delete context[fn]                 // 删除我们声明的fn属性
   return result                      // 返回函数执行结果
 }
+
+// 原理：跟call相似，把参数列表改为参数数组

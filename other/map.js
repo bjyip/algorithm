@@ -12,3 +12,7 @@ Array.prototype.myMap = function(fn, context) {
   }
   return temp
 }
+// 原理
+// 1. 在原型上添加一个方法
+// 2. 传一个函数和this
+// 3. call 方法传的参数和封装好的map方法的参数是一样的。
