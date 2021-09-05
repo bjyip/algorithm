@@ -16,3 +16,4 @@ Function.prototype.myCall = function(context, ...args) {
 //   3. 给当前上下文（call方法的第一个参数）添加一个属性fn，属性值为this，当前上下文就可以调用这个方法了。
 //   4. 把call方法传入的其他的参数传入到属性fn指代的函数中，直接调用函数
 //   5. fn.myCall(context) 就是将fn方法添加到context的属性中，fn中的this 指向 context
+//   6. 把arguments转成数组的其他方法：var args = Array.prototype.slice.call(arguments)
