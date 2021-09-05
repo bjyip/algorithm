@@ -5,6 +5,16 @@
   "version": "0.2.0",
   "configurations": [
     /** ------------------------其他------------------------*/
+    // 深度遍历二叉树
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "dfs",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}\\other/dfs.js"
+    },
     // 实现add函数使得一下表达式的值正确
     {
       "type": "node",
