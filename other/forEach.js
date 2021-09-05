@@ -1,7 +1,3 @@
-
-
-
-
 Array.prototype.myForEach = function(fn, context) {
   if (typeof this !== 'array') {
     throw TypeError(this + '.myMap is not a function')
@@ -13,3 +9,5 @@ Array.prototype.myForEach = function(fn, context) {
     fn.call(context || window, this[i], i, context)    
   }
 }
+
+// 原理：遍历数组每个元素，没有返回值，如果遍历数组的目的是为了得到返回值，那么使用map，否则使用forEach
