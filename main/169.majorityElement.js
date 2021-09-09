@@ -1,27 +1,30 @@
 // 多数元素
+// 给定一个大小为 n 的数组，找到其中的多数元素。多数元素是指在数组中出现次数 大于 ⌊ n/2 ⌋ 的元素。
+// 你可以假设数组是非空的，并且给定的数组总是存在多数元素。
+
 /**
  * @param {number[]} nums
  * @return {number}
  */
 // 排序
 var majorityElement = function(nums) {
-  var newNums = quickSort(nums);
+  var newNums = quickSort(nums)
   return newNums[Math.floor(newNums.length / 2)]
-};
+}
 
 var quickSort = function(arr) {
-  if (arr.length <= 1) return arr;
-  var midIndex = Math.floor(arr.length / 2);
-  var mid = arr.splice(midIndex, 1)[0];
-  var left = [], right = [];
-  for (var i = 0; i < arr.length; i++) {
+  if (arr.length <= 1) return arr
+  var midIndex = Math.floor(arr.length / 2)
+  var mid = arr.splice(midIndex, 1)[0]
+  var left = [], right = []
+  for (var i = 0 i < arr.length i++) {
     if (mid > arr[i]) {
-      left.push(arr[i]);
+      left.push(arr[i])
     } else {
-      right.push(arr[i]);
+      right.push(arr[i])
     }
   }
-  return quickSort(left).concat(mid, quickSort(right));
+  return quickSort(left).concat(mid, quickSort(right))
 }
 /**
  * 复杂度分析
@@ -31,32 +34,36 @@ var quickSort = function(arr) {
 
 // hash
 var majorityElement = function(nums) {
-  var hash = {};
-  for (let i = 0; i < nums.length; i++) {
+  var hash = {}
+  for (let i = 0 i < nums.length i++) {
     if (hash[nums[i]]) {
-      hash[nums[i]]++;
+      hash[nums[i]]++
     } else {
       hash[nums[i]] = 1
     }
-    if (hash[nums[i]] > Math.floor(nums.length / 2)) return nums[i];
+    if (hash[nums[i]] > Math.floor(nums.length / 2)) return nums[i]
   }
-};
+}
 /**
  * 复杂度分析
- * 时间复杂度：O(n)，其中 n 是数组 nums 的长度。我们遍历数组 nums 一次，对于 nums 中的每一个元素，将其插入哈希表都只需要常数时间。如果在遍历时没有维护最大值，在遍历结束后还需要对哈希表进行遍历，因为哈希表中占用的空间为 O(n)（可参考下文的空间复杂度分析），那么遍历的时间不会超过 O(n)。因此总时间复杂度为 O(n)。
- * 空间复杂度：O(n)O(n)。
+ * 时间复杂度：O(n)，其中 n 是数组 nums 的长度。
+ *  我们遍历数组 nums 一次，对于 nums 中的每一个元素，将其插入哈希表都只需要常数时间。
+ *  如果在遍历时没有维护最大值，在遍历结束后还需要对哈希表进行遍历，
+ *  因为哈希表中占用的空间为 O(n)（可参考下文的空间复杂度分析），那么遍历的时间不会超过 O(n)。
+ *  因此总时间复杂度为 O(n)。
+ * 空间复杂度：O(n)。
 */
 
 // 投票
 var majorityElement = function(nums) {
-  var candidate = 0, count = 0;
+  var candidate = 0, count = 0
   for (let i = 0; i < nums.length; i++) {
     if (count === 0) {
-      candidate = nums[i];    
+      candidate = nums[i]
     }
-    count += candidate === nums[i] ? 1 : -1;
+    count += candidate === nums[i] ? 1 : -1
   }
-  return candidate;
+  return candidate
 }
 /**
  * 复杂度分析
@@ -64,4 +71,4 @@ var majorityElement = function(nums) {
  * 空间复杂度：O(1)。Boyer-Moore 算法只需要常数级别的额外空间。
  */
 
-console.log(majorityElement([1,2,3,2,2,2,5,4,2]));
+console.log(majorityElement([1,2,3,2,2,2,5,4,2]))
