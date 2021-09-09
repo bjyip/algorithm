@@ -17,7 +17,7 @@ var quickSort = function(arr) {
   var midIndex = Math.floor(arr.length / 2)
   var mid = arr.splice(midIndex, 1)[0]
   var left = [], right = []
-  for (var i = 0 i < arr.length i++) {
+  for (var i = 0; i < arr.length; i++) {
     if (mid > arr[i]) {
       left.push(arr[i])
     } else {
@@ -35,7 +35,7 @@ var quickSort = function(arr) {
 // hash
 var majorityElement = function(nums) {
   var hash = {}
-  for (let i = 0 i < nums.length i++) {
+  for (let i = 0; i < nums.length; i++) {
     if (hash[nums[i]]) {
       hash[nums[i]]++
     } else {
