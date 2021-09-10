@@ -14,11 +14,13 @@ var MyStack = function() {
 */
 MyStack.prototype.push = function(x) {
   this.queue2.push(x)
+  // 将后面进来的放到queue2的最前面，然后queue1顺序不变接在后面
   while (this.queue1.length) {
-      this.queue2.push(this.queue1.shift());
+    this.queue2.push(this.queue1.shift());
   }
+  // 将queue2顺序不变转移到queue1
   while (this.queue2.length) {
-      this.queue1.push(this.queue2.shift());
+    this.queue1.push(this.queue2.shift());
   }
 };
 
