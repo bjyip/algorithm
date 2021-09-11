@@ -3,8 +3,8 @@
  * Initialize your data structure here.
  */
 var MyStack = function() {
-  this.queue1 = [];
-  this.queue2 = [];
+  this.queue1 = []; // 储存元素
+  this.queue2 = []; // 辅助工具
 };
 
 /**
