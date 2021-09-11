@@ -9,17 +9,14 @@
  */
 // 一遍哈希表
 var twoSum = function(nums, target) {
-  var hash = {};
-  var now = 0;
-  var len = nums.length;
-  for (var i = 0; i < len; i++) {
-    now = target - nums[i];
-    if (hash[now] !== undefined) {
-      return [hash[now], i]
+  var hash = {}
+  for (let i = 0; i < nums.length; i++) {
+    if (hash[target - nums[i]] !== undefined) {
+      return [hash[target - nums[i]], i]
     }
-    hash[nums[i]] = i;
+    hash[nums[i]] = i
   }
-};
+}
 /**
  * 复杂度分析：
  * 时间复杂度：O(n)，我们只遍历了包含有 n 个元素的列表一次。在表中进行的每次查找只花费 O(1) 的时间。
