@@ -3,8 +3,8 @@
  * Initialize your data structure here.
  */
 var MyQueue = function() {
-  this.steak1 = [];
-  this.steak2 = [];
+  this.stack1 = []; // 储存元素
+  this.stack2 = []; // 辅助工具
 };
 
 /**
@@ -13,7 +13,7 @@ var MyQueue = function() {
 * @return {void}
 */
 MyQueue.prototype.push = function(x) {
-  this.steak1.push(x);
+  this.stack1.push(x);
 };
 
 /**
@@ -21,12 +21,15 @@ MyQueue.prototype.push = function(x) {
 * @return {number}
 */
 MyQueue.prototype.pop = function() {
-  while (this.steak1.length) {
-      this.steak2.push(this.steak1.pop())
+  // 将stack1倒序放入stack2中
+  while (this.stack1.length) {
+    this.stack2.push(this.stack1.pop())
   }
-  var element = this.steak2.pop();
-  while (this.steak2.length) {
-      this.steak1.push(this.steak2.pop())
+  // 取出stack2中栈顶元素
+  var element = this.stack2.pop();
+  // 将stack2剩余元素倒序放入stack1中
+  while (this.stack2.length) {
+    this.stack1.push(this.stack2.pop())
   }
   return element;
 };
@@ -36,7 +39,7 @@ MyQueue.prototype.pop = function() {
 * @return {number}
 */
 MyQueue.prototype.peek = function() {
-  return this.steak1[0]
+  return this.stack1[0]
 };
 
 /**
@@ -44,7 +47,7 @@ MyQueue.prototype.peek = function() {
 * @return {boolean}
 */
 MyQueue.prototype.empty = function() {
-  return this.steak1.length === 0;
+  return this.stack1.length === 0;
 };
 
 /**
