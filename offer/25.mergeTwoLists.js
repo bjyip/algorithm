@@ -1,6 +1,5 @@
-
-
 // 25.合并两个排序的链表
+// 输入两个递增排序的链表，合并这两个链表并使新链表中的节点仍然是递增排序的。
 
 var LinkList = require('../linkList/linkList').LinkList
 var linkList1 = new LinkList();
@@ -8,6 +7,7 @@ var linkList2 = new LinkList();
 linkList1.appendBatch([1, 2, 4])
 linkList2.appendBatch([1, 3, 4])
 var ListNode = require('../linkList/linkList').ListNode
+
 /**
  * Definition for singly-linked list.
  * function ListNode(val) {
