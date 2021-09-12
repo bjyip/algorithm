@@ -15,9 +15,7 @@ var fib = function(n) {
   if (n <= 1) {
     return n;
   }
-  var a = fib(n - 1);
-  var b = fib(n - 2);
-  return (a + b) % 1000000007;
+  return (fib(n - 1) + fib(n - 2)) % 1000000007;
 };
 /**
  * 复杂度分析
