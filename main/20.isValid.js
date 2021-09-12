@@ -8,25 +8,25 @@
  * @return {boolean}
  */
 var isValid = function(s) {
-	if (s.length === 0) {
-		return true
+	if (s.length % 2 === 1) {
+		return false
 	}
 	var hash = {
 		'(': ')',
-		'{': '}',
-		'[': ']'
-	};
-	var steak = []
-	for (i = 0; i < s.length; i++) {
+		'[': ']',
+		'{': '}'
+	}
+	var stack = []
+	for (let i = 0; i < s.length; i++) {
 		if (hash[s[i]]) {
-			steak.push(s[i])
+			stack.push(s[i])
 		} else {
-			if (s[i] !== hash[steak.pop()]) {
+			if (s[i] !== hash[stack.pop()]) {
 				return false
 			}
 		}
 	}
-	return steak.length === 0
+	return stack.length === 0
 }
 /**
  * 复杂度分析
