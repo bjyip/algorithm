@@ -18,6 +18,7 @@ var treeNode = new GenerateTreeNode([4,2,7,1,3,6,9]);
  */
 // BFS
 var mirrorTree = function(root) {
+  if (!root) return null;
   var queue = [];
   queue.push(root);
   while (queue.length) {
