@@ -17,21 +17,20 @@ var treeNode = new GenerateTreeNode([3,1,4,null,2]);
  * @param {number} k
  * @return {number}
  */
-// 形参k不能随着dfs的迭代而不断变化，为了记录迭代进程和结果，引入类变量c和res。
-var res, c
-var dfs = function(root) {
-  if (!root) return
-  dfs(root.right)
-  // c等于0就找到目标，不再进行递归
-  if (c === 0) return
-  // 先--，再判断，等于0就找到目标
-  if (--c === 0) res = root.val
-  dfs(root.left)
-}
+// 反中序遍历
 var kthLargest = function(root, k) {
-  // 利用形参值k对类变量c进行初始化
-  c = k
-  // 这里不要引入形参k，dfs中直接使用的是初始值为k的类变量c
+  var res, c = k
+  var dfs = function(root) {
+    if (!root) return
+    // c等于0就找到目标，不再进行递归
+    if (c === 0) return
+    dfs(root.right)
+    // 先--，再判断，等于0就找到目标
+    if (--c === 0) {
+      res = root.val
+    }
+    dfs(root.left)
+  }
   dfs(root)
   return res
 }
