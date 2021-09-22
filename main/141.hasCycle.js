@@ -37,21 +37,6 @@ var hasCycle = function(head) {
 // 双指针（快慢指针）
 var hasCycle = function(head) {
   if (!head || !head.next) {
-    return false;
-  }
-  var slow = head, fast = head.next;
-  while (fast && fast.next) {
-    if (slow.val === fast.val) {
-      return true;
-    }
-    slow = slow.next;
-    fast = fast.next.next;
-  }
-  return false
-};
-
-var hasCycle = function(head) {
-  if (!head || !head.next) {
     return false
   }
   var slow = head, fast = head.next
