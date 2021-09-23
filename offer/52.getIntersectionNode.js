@@ -48,12 +48,12 @@ var getIntersectionNode = function(headA, headB) {
 
 // 双指针
 var getIntersectionNode = function(headA, headB) {
-  var tA = headA, tB = headB;
+  var pA = headA, pB = headB;
   while (JSON.stringify(pA) !== JSON.stringify(pB)) {
-    tA = tA ? tA.next : headB;
-    tB = tB ? tB.next : headA;
+    pA = pA ? pA.next : headB;
+    pB = pB ? pB.next : headA;
   }
-  return tA;
+  return pA;
 }
 
 /**
