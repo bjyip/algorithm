@@ -2,9 +2,9 @@
 // add(1，2，3).sumOf() // 6
 // add(2)(4, 1)(2).sumOf() // 9
 function add() {
-  const arr = Array.prototype.slice.call(arguments)
+  const arr = [...arguments] // var arr = Array.prototype.slice.call(arguments)
   function addPro() {
-    arr = arr.concat(Array.prototype.slice.call(arguments))
+    arr.push(...arguments) // arr = arr.concat(Array.prototype.slice.call(arguments))
     return addPro
   }
   addPro.sumOf = function() {
