@@ -2,7 +2,7 @@ var GenerateTreeNode = require('../tree/binaryTree').GenerateTreeNode
 
 var binaryTree = new GenerateTreeNode([2, 10, 5, 8, 3, 7, 4]);
 
-// 先序遍历
+// 先序遍历-迭代
 function preorder(root) {
   if (!root) {
     return false
@@ -18,8 +18,17 @@ function preorder(root) {
     root = root.right
   }
 }
+// 先序遍历-递归
+function preorderRecur(root) {
+  if (!root) {
+    return false
+  }
+  console.log(root.val)
+  preorderRecur(node.left)
+  preorderRecur(node.right)
+}
 
-// 中序遍历
+// 中序遍历-迭代
 function inorder(root) {
   if (!root) {
     return false
@@ -35,8 +44,17 @@ function inorder(root) {
     root = root.right
   }
 }
+// 先序遍历-递归
+function inorderRecur(root) {
+  if (!root) {
+    return false
+  }
+  inorderRecur(root.left)
+  console.log(root.val)
+  inorderRecur(root.right)
+}
 
-// 后序遍历
+// 后序遍历-迭代
 function postorder(root) {
   if (!root) {
     return false
@@ -58,6 +76,15 @@ function postorder(root) {
       root = root.right
     }
   }
+}
+// 后序遍历-递归
+function postorderRecur(root) {
+  if (!root) {
+    return false
+  }
+  postorderRecur(root.left)
+  postorderRecur(root.right)
+  console.log(root.val)
 }
 
 console.log(postorder(binaryTree))
