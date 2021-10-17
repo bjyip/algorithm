@@ -59,4 +59,50 @@ var numWays = function(n) {
  * 时间复杂度 O(N) ： 计算 f(n) 需循环 n 次，每轮循环内计算操作使用 O(1) 。
  * 空间复杂度 O(1) ： 几个标志变量使用常数大小的额外空间。
  */
+
+// 增加限制：不能连续走两步
+var numWays = function(n, status) {
+  if (n <= 1) {
+    return 1
+  }
+  if (n === 2) {
+    if (status < 2) {
+      return 2
+    } else {
+      return 1
+    }
+  }
+  if (status < 2) {
+    return numWays(n - 1, 1) + numWays(n - 2, 2)
+  } else {
+    return numWays(n - 1, 1)
+  }
+}
+// 记忆版
+var numWays = function(n, status) {
+  var hash = {}
+  var recur = function(n, status) {
+    if (n <= 1) {
+      return 1
+    }
+    if (n === 2) {
+      if (status < 2) {
+        return 2
+      } else {
+        return 1
+      }
+    }
+    if (hash[n]) {
+      return hash[n]
+    }
+    if (status < 2) {
+      hash[n] = numWays(n - 1, 1) + numWays(n - 2, 2)
+    } else {
+      hash[n] = numWays(n - 1, 1)
+    }
+    return hash[n]
+  }
+  return recur(n, status)
+}
+
 console.log(numWays(9))
