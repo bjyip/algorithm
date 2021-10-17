@@ -12,9 +12,9 @@ var reverseList = function(head) {
   if (!head) {
     return head;
   }
-  var curr = head, prev = null, tempNext = null;
+  var curr = head, prev = null;
   while (curr) {
-    tempNext = curr.next; // 暂存断掉的部分
+    var tempNext = curr.next; // 暂存断掉的部分
     curr.next = prev;
     prev = curr;
     curr = tempNext; // 赋值断掉的部分，继续下一次迭代
