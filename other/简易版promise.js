@@ -1,3 +1,5 @@
+// Promise是一个状态机的机制，初始状态为 pending，成功状态为 fulfilled，失败状态为 rejected。
+// 只能从 pending -> fulfilled，或者从 pending -> rejected，并且状态一旦转变，就永远不会再变了。
 function MyPromise(fn) {
   const _this = this
   _this.state = 'pending' // 状态
@@ -5,6 +7,7 @@ function MyPromise(fn) {
   _this.resolvedCallbacks = [] // 保存 then 中的回调
   _this.rejectedCallbacks = [] // 保存 catch 中的回调
 
+  // 将promise的状态从pending更改为fulfilled，并且以value为参数依次调用then方法中注册的回调
   function resolve(value) {
     if (_this.state === 'pending') {
       _this.state = 'resolved'
@@ -13,6 +16,7 @@ function MyPromise(fn) {
       _this.resolvedCallbacks.forEach(cb => cb(_this.value))
     }
   }
+  // 将promise的状态从pending更改为rejected，并且以value为参数依次调用then方法中注册的回调
   function reject(value) {
     if (_this.state === 'pending') {
       _this.state = 'rejected'
@@ -29,6 +33,7 @@ function MyPromise(fn) {
   }
 }
 
+// promise实例的then方法
 MyPromise.prototype.then = function(onFulfilled, onRejected) {
   const _this = this
   onFulfilled = typeof onFulfilled === 'function' ? onFulfilled : val => val
