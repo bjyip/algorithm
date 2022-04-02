@@ -5,6 +5,16 @@
   "version": "0.2.0",
   "configurations": [
     /** ------------------------其他------------------------*/
+    // 过滤树节点
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "filterTree",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}\\other/filterTree.js"
+    },
     // 深度遍历二叉树
     {
       "type": "node",
