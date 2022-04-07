@@ -5,6 +5,16 @@
   "version": "0.2.0",
   "configurations": [
     /** ------------------------其他------------------------*/
+    // 树形结构数组扁平化
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "treeToArray",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}\\other/treeToArray.js"
+    },
     // 过滤树节点
     {
       "type": "node",
