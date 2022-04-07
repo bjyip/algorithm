@@ -37,7 +37,7 @@ const tree = [{
 
 
 function treeToArray(arr) {
-  if (!(arr instanceof Array) || arr.length === 0) {
+  if (!Array.isArray(arr) || arr.length === 0) {
     return []
   }
   let result = []
