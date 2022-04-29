@@ -5,6 +5,16 @@
   "version": "0.2.0",
   "configurations": [
     /** ------------------------其他------------------------*/
+    // 扁平数组树形化
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "arrayToTree",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}\\other/arrayToTree.js"
+    },
     // 树形结构数组扁平化
     {
       "type": "node",
