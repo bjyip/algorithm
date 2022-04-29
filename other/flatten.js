@@ -47,3 +47,8 @@ function flatten(arr) {
   }
   return arr;
 }
+
+// 使用flat
+function flatten(arr) {
+  return arr.flat(Infinity)
+}
