@@ -31,4 +31,4 @@ new Promise(function(resolve) {
 // Promise 优先于 setTimeout 宏任务，所以 setTimeout 回调会最后执行
 // Promise 一旦被定义就会立即执行
 // Promise 的 resolve 和 reject  是异步执行的回调。所以 resolve() 会被放到回调队列中，在主函数执行完和 setTimeout 之前调用
-// await会阻塞async函数的执行（async方法是执行script中同步代码的时候执行的，相当于阻塞了script中的同步代码）；await 执行完后，会让出线程。async 标记的函数会返回一个 Promise 对象
+// await执行后下面剩下的所有代码会放到Promise.resolve().then方法中（生成了一个微任务）。async 标记的函数会返回一个 Promise 对象
