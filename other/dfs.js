@@ -18,15 +18,6 @@ function preorder(root) {
     root = root.right
   }
 }
-// 先序遍历-递归
-function preorderRecur(root) {
-  if (!root) {
-    return false
-  }
-  console.log(root.val)
-  preorderRecur(node.left)
-  preorderRecur(node.right)
-}
 
 // 中序遍历-迭代
 function inorder(root) {
@@ -43,15 +34,6 @@ function inorder(root) {
     console.log(root.val)
     root = root.right
   }
-}
-// 先序遍历-递归
-function inorderRecur(root) {
-  if (!root) {
-    return false
-  }
-  inorderRecur(root.left)
-  console.log(root.val)
-  inorderRecur(root.right)
 }
 
 // 后序遍历-迭代
@@ -77,6 +59,27 @@ function postorder(root) {
     }
   }
 }
+
+// 先序遍历-递归
+function preorderRecur(root) {
+  if (!root) {
+    return false
+  }
+  console.log(root.val)
+  preorderRecur(node.left)
+  preorderRecur(node.right)
+}
+
+// 中序遍历-递归
+function inorderRecur(root) {
+  if (!root) {
+    return false
+  }
+  inorderRecur(root.left)
+  console.log(root.val)
+  inorderRecur(root.right)
+}
+
 // 后序遍历-递归
 function postorderRecur(root) {
   if (!root) {
