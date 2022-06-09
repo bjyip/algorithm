@@ -28,10 +28,16 @@ class EventEmitter {
   }
   // 单次监听函数
   once(type, cb) {
-    const wrap = function(...args) {
+    const wrap = (...args) => {
       cb(...args)
       this.off(type, wrap)
     }
+    // 此处要使用this，wrap要声明箭头函数（或者在上一层暂存this），让this指向EventEmitter类，不然会指向undefined
     this.on(type, wrap)
   }
 }
+
+const emitter = new EventEmitter()
+emitter.once('a', (...args) => { console.log(...args) })
+emitter.emit('a', 1,2,3)
+emitter.emit('a', 1,2,3)

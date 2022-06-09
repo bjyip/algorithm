@@ -2,18 +2,16 @@
 function isUpgrade(version1, version2) {
   var version1List = version1.split('.')
   var version2List = version2.split('.')
-  var isUpgrade = false
   for (var i = 0; i < version1List.length; i++) {
     if (parseInt(version1List[i]) > parseInt(version2List[i])) {
-      isUpgrade = true
-      break
+      return true
     } else if (parseInt(version1List[i]) < parseInt(version2List[i])) {
-      isUpgrade = false
-      break
+      return false
     }
   }
-  return isUpgrade
+  return false
 }
+
 // 版本字符串长度不一样
 function compareVersion(version1, version2) {
   const arr1 = version1.split('.')
