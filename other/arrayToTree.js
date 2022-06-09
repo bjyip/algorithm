@@ -17,26 +17,28 @@ var arr = [
 ]
 
 // 两个循环
-function arrayToTree(data) {
-  let cloneData = JSON.parse(JSON.stringify(data))
-  return cloneData.filter(parent => {
-    let branchArr = cloneData.filter(child => parent.id === child.pid);
+function arrayToTree1(array) {
+  const cloneArray = JSON.parse(JSON.stringify(array))
+  const result = cloneArray.filter(parent => {
+    const branchArr = cloneArray.filter(child => parent.id === child.pid);
     if (branchArr.length) {
       parent.children = branchArr
     }
     return parent.pid === 0;
   })
+  return result
 }
 
-// 用map辅助
-function arrayToTree(array) {
-  array = JSON.parse(JSON.stringify(array))
+// 用map辅助，并利用引用类型特性
+function arrayToTree2(array) {
+  // cloneArray、result和trees里面的对象元素共享
+  const cloneArray = JSON.parse(JSON.stringify(array))
   let result = []
   let trees = {}
-  array.forEach(item => {
+  cloneArray.forEach(item => {
     trees[item.id] = item
   })
-  array.forEach(item => {
+  cloneArray.forEach(item => {
     if (trees[item.pid]) {
       if (!trees[item.pid].children) {
         trees[item.pid].children = []
@@ -50,31 +52,5 @@ function arrayToTree(array) {
   return result;
 }
 
-function transformTree(list) {
-  const tree = []
-  const record = {}
-  for (let i = 0, len = list.length; i < len; i++) {
-    const item = list[i]
-    // if (record[item.id]) {
-    //   item.children = record[item.id]
-    // } else {
-    //   item.children = record[item.id] = []
-    // }
-    if (!record[item.id]) {
-      record[item.id] = []
-    }
-    item.children = record[item.id]
-    if (item.pid) {
-      if (!record[item.pid]) {
-        record[item.pid] = []
-      }
-      record[item.pid].push(item)
-    } else {
-      tree.push(item)
-    }
-  }
-  return tree
-}
-
-const tree = transformTree(arr)
+const tree = arrayToTree2(arr)
 console.log(JSON.stringify(tree))

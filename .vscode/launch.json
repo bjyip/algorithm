@@ -13,7 +13,7 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}\\other/arrayToTree.js"
+      "program": "${workspaceFolder}/other/arrayToTree.js"
     },
     // 树形结构数组扁平化
     {
