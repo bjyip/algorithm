@@ -1,8 +1,25 @@
+// 不包含构造函数版本
 Function.prototype.myBind = function(context, ...args) {
+  // this指向当前调用myBind的函数对象（Function实例）
   if (typeof this !== 'function') {
     throw TypeError(this + '.myBind is not a function')
   }
-  const self = this // 指向调用myBind的方法
+  context = context || window
+  const self = this
+  const bound = function() {
+    self.apply(context, [...args, ...arguments])
+  }
+  // 返回新函数
+  return bound
+}
+
+// 完整版
+Function.prototype.myBind = function(context, ...args) {
+  // this指向当前调用myBind的函数对象（Function实例）
+  if (typeof this !== 'function') {
+    throw TypeError(this + '.myBind is not a function')
+  }
+  const self = this
   const Temp = function() {}
   const bound = function() {
     // 如果bound函数作为构造函数被new调用，this应该指向bound的实例
