@@ -42,9 +42,10 @@ function treeToArray(arr) {
   }
   let result = []
   for (item of arr) {
-    var res = JSON.parse(JSON.stringify(item))
+    const res = JSON.parse(JSON.stringify(item))
     delete res.children
     result.push(res)
+    // 关键
     result = result.concat(treeToArray(item.children))
   }
   return result

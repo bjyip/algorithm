@@ -28,15 +28,15 @@ function flatten(arr) {
 // 递归
 // 递归的遍历每一项，若为数组则继续遍历，否则concat
 function flatten(arr) {
-  var res = [];
-  arr.map(item => {
+  let res = []
+  arr.forEach(item => {
     if (Array.isArray(item)) {
-      res = res.concat(flatten(item));
+      res.push(...flatten(item))
     } else {
-      res.push(item);
+      res.push(item)
     }
-  });
-  return res;
+  })
+  return res
 }
 
 // 扩展运算符

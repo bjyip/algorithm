@@ -35,53 +35,47 @@ const tree = [{
   }]
 }]
 // 只需要考虑自身的节点满足条件即可,不用带上父节点
-function filterTree(nodes, query) {
-  if (!nodes) {
-    return []
-  }
-  let newNodes = []
-  for (let node of nodes) {
-    if (node.label.indexOf(query) > -1) {
-      // 递归把node下面的所有子节点都查一遍
-      const subs = filterTree(node.children, query)
-      if (subs.length) {
-        node.children = subs
-      } else {
-        delete node.children
-      }
-      newNodes.push(node)
-    } else {
-      // 递归把node下面的所有子节点都查一遍
-      const subs = filterTree(node.children, query)
-      if (subs.length) {
-        newNodes.push(...subs)
-      } 
-    }
-  }
-  return newNodes
-}
-
-// 自身以及其子节点满足条件都要过滤出来
 function filterTree1(nodes, query) {
   if (!nodes) {
     return []
   }
-  const newNodes = []
-  for (let node of nodes) {
+  const cloneNodes = JSON.parse(JSON.stringify(nodes))
+  let newNodes = []
+  for (let node of cloneNodes) {
+    // 递归找出node下面符合条件的子节点
+    const subs = filterTree1(node.children, query)
     if (node.label.indexOf(query) > -1) {
-      // 递归把node下面的所有子节点都查一遍
-      const subs = filterTree1(node.children, query)
-      if (subs.length) {
-        node.children = subs
-      } else {
+      if (!subs.length) {
         delete node.children
       }
       newNodes.push(node)
     } else {
-      // 递归把node下面的所有子节点都查一遍
-      const subs = filterTree1(node.children, query)
       if (subs.length) {
-        newNodes.push(Object.assign({}, node, {children: subs}))
+        newNodes.push(...subs)
+      }
+    }
+  }
+  return newNodes
+}
+
+// 自身节点满足条件以及父节点都要过滤出来
+function filterTree2(nodes, query) {
+  if (!nodes) {
+    return []
+  }
+  const cloneNodes = JSON.parse(JSON.stringify(nodes))
+  const newNodes = []
+  for (let node of cloneNodes) {
+    // 递归找出node下面符合条件的子节点
+    const subs = filterTree2(node.children, query)
+    if (node.label.indexOf(query) > -1) {
+      if (!subs.length) {
+        delete node.children
+      }
+      newNodes.push(node)
+    } else {
+      if (subs.length) {
+        newNodes.push(Object.assign({}, node, { children: subs }))
       }
     }
   }
@@ -89,4 +83,6 @@ function filterTree1(nodes, query) {
 }
 
 
-console.log(JSON.stringify(filterTree(tree, '2')))
+console.log(JSON.stringify(filterTree1(tree, '二级 1-1')))
+console.log('---')
+console.log(JSON.stringify(filterTree2(tree, '二级 1-1')))
