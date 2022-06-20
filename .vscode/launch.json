@@ -5,6 +5,16 @@
   "version": "0.2.0",
   "configurations": [
     /** ------------------------其他------------------------*/
+    // 数组排序
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "sort",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/other/sort.js"
+    },
     // 实现event类，有on，off，emit，once方法
     {
       "type": "node",
