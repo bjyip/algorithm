@@ -9,6 +9,16 @@
     {
       "type": "node",
       "request": "launch",
+      "name": "getString",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/other/getString.js"
+    },
+    // 数组排序
+    {
+      "type": "node",
+      "request": "launch",
       "name": "sort",
       "skipFiles": [
         "<node_internals>/**"
