@@ -287,7 +287,16 @@
       "program": "${workspaceFolder}\\offer/03.findRepeatNumber.js"
     },
     /** ------------------------主站------------------------*/
-
+    // 数字 1 的个数
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "countDigitOne",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/main/233.countDigitOne(数字 1 的个数).js"
+    },
     // 235.二叉搜索树的最近公共祖先
     {
       "type": "node",
