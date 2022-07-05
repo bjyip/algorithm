@@ -326,7 +326,7 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}/main/69.mySqrt.js"
+      "program": "${workspaceFolder}\\main/69.mySqrt(x 的平方根).js"
     },
     // 36.有效的数独
     {
@@ -406,7 +406,7 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceRoot}/main/50.myPow.js"
+      "program": "${workspaceRoot}/main/50.myPow(计算x的n次幂函数).js"
     },
     // 98.验证二叉搜索树
     {
