@@ -19,7 +19,7 @@ var reverseList = function(head) {
     prev = curr;
     curr = tempNext; // 赋值断掉的部分，继续下一次迭代
   }
-  return prev; // 最后cur未null时跳出while，故返回pre
+  return prev; // 最后curr为null时跳出while，故返回pre
 };
 /**
  * 复杂度分析
