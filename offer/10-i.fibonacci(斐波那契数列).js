@@ -42,17 +42,20 @@ function fib(n, cache = {}) {
 
 // 动态规划
 var fib = function(n) {
+  if (n <= 1) {
+    return n
+  }
   var a = 0, b = 1, sum = 0;
-  for (var i = 0; i < n; i++) {
+  for (var i = 2; i <= n; i++) {
     sum = (a + b) % 1000000007;
     a = b;
     b = sum;
   }
-  return a;
+  return sum;
 }
 /**
  * 复杂度分析：
  * 时间复杂度 O(N) ： 计算 f(n) 需循环 n 次，每轮循环内计算操作使用 O(1) 。
  * 空间复杂度 O(1) ： 几个标志变量使用常数大小的额外空间。
  */
-console.log(fib(9))
+console.log(fib(8))
