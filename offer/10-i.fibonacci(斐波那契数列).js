@@ -10,7 +10,7 @@
  * @param {number} n
  * @return {number}
  */
-// 递归
+// （分治）递归
 var fib = function(n) {
   if (n <= 1) {
     return n;
