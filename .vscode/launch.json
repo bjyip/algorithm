@@ -264,7 +264,7 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}\\offer/10-i.fibonacci.js"
+      "program": "${workspaceFolder}\\offer/10-i.fibonacci(斐波那契数列).js"
     },
     // 06.从尾到头打印链表
     {

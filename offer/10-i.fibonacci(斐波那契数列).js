@@ -24,19 +24,15 @@ var fib = function(n) {
  */
 
 // 记忆化递归
-var fib = function(n) {
-  var cache = {}
-  var recursion = function(n) {
-    if (n <= 1) {
-      return n
-    }
-    if (cache[n]) {
-      return cache[n]
-    }
-    cache[n] = (recursion(n - 1) + recursion(n - 2)) % 1000000007
+function fib(n, cache = {}) {
+  if (n <= 1) {
+    return n
+  }
+  if (cache[n]) {
     return cache[n]
   }
-  return recursion(n)
+  cache[n] = (fib(n - 1) + fib(n - 2)) % 1000000007
+  return cache[n]
 }
 /**
  * 复杂度分析：
