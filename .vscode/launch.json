@@ -254,7 +254,7 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}\\offer/10-ii.numWays.js"
+      "program": "${workspaceFolder}\\offer/10-ii.numWays(青蛙跳台阶问题).js"
     },
     // 10-i.斐波那契数列
     {

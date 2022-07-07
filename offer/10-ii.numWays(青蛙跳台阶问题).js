@@ -13,11 +13,11 @@
  * @return {number}
  */
 // 递归（分治）
-var numWays = function(n) {
-  if (n <= 1) {
-    return 1;
+var numWays1 = function(n) {
+  if (n <= 3) {
+    return n;
   }
-  return (numWays(n - 1) + numWays(n - 2)) % 1000000007;
+  return (numWays1(n - 1) + numWays1(n - 2)) % 1000000007;
 };
 /**
  * 复杂度分析
@@ -26,17 +26,13 @@ var numWays = function(n) {
  */
 
 // 记忆化递归
-var numWays = function(n) {
-  var hash = {}
-  function recursion(n) {
-    if (n <= 1) {
-      return 1
-    }
-    if (hash[n]) return hash[n]
-    hash[n] = (recursion(n - 1) + recursion(n - 2)) % 1000000007
-    return hash[n]
+var numWays2 = function(n, cache = {}) {
+  if (n <= 3) {
+    return n
   }
-  return recursion(n)
+  if (cache[n]) return cache[n]
+  cache[n] = (numWays2(n - 1) + numWays2(n - 2)) % 1000000007
+  return cache[n]
 }
 /**
  * 复杂度分析：
@@ -45,14 +41,17 @@ var numWays = function(n) {
  */
 
 // 动态规划
-var numWays = function(n) {
-  var a = 1, b = 1, sum;
-  for (let i = 0; i < n; i++) {
-    sum = (a + b) % 1000000007;
-    a = b;
-    b = sum;
+var numWays3 = function(n) {
+  if (n <= 3) {
+    return n
   }
-  return a;
+  var a = 2, b = 3, sum
+  for (let i = 4; i <= n; i++) {
+    sum = (a + b) % 1000000007
+    a = b
+    b = sum
+  }
+  return sum
 };
 /**
  * 复杂度分析：
@@ -61,48 +60,52 @@ var numWays = function(n) {
  */
 
 // 增加限制：不能连续走两步
-var numWays = function(n, status) {
+var numWays4 = function(n, status = 1) {
   if (n <= 1) {
     return 1
   }
-  if (n === 2) {
-    if (status < 2) {
-      return 2
-    } else {
-      return 1
-    }
-  }
   if (status < 2) {
-    return numWays(n - 1, 1) + numWays(n - 2, 2)
+    return numWays4(n - 1, 1) + numWays4(n - 2, 2)
   } else {
-    return numWays(n - 1, 1)
+    return numWays4(n - 1, 1)
   }
 }
+
 // 记忆版
-var numWays = function(n, status) {
+var numWays5 = function(n, status = 1) {
   var hash = {}
   var recur = function(n, status) {
     if (n <= 1) {
       return 1
     }
-    if (n === 2) {
-      if (status < 2) {
-        return 2
-      } else {
-        return 1
-      }
-    }
     if (hash[n]) {
       return hash[n]
     }
     if (status < 2) {
-      hash[n] = numWays(n - 1, 1) + numWays(n - 2, 2)
+      hash[n] = numWays5(n - 1, 1) + numWays5(n - 2, 2)
     } else {
-      hash[n] = numWays(n - 1, 1)
+      hash[n] = numWays5(n - 1, 1)
     }
     return hash[n]
   }
   return recur(n, status)
 }
 
-console.log(numWays(9))
+// 动态规划（未解决）
+function numWays6(n) {
+  if (n <= 3) return n
+  var prePrePre = 1
+  var prePre = 2
+  var pre = 3
+  var cur
+  for (var i = 4; i <= n; i++) {
+    cur = pre + prePrePre
+    prePrePre = prePre
+    prePre = pre
+    pre = cur
+  }
+
+  return cur
+}
+
+console.log(numWays6(9))
