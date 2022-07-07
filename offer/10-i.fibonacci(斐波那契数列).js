@@ -11,11 +11,11 @@
  * @return {number}
  */
 // （分治）递归
-var fib = function(n) {
-  if (n <= 1) {
+var fib1 = function(n) {
+  if (n <= 3) {
     return n;
   }
-  return (fib(n - 1) + fib(n - 2)) % 1000000007;
+  return (fib1(n - 1) + fib1(n - 2)) % 1000000007;
 };
 /**
  * 复杂度分析
@@ -24,14 +24,14 @@ var fib = function(n) {
  */
 
 // 记忆化递归
-function fib(n, cache = {}) {
-  if (n <= 1) {
+function fib2(n, cache = {}) {
+  if (n <= 3) {
     return n
   }
   if (cache[n]) {
     return cache[n]
   }
-  cache[n] = (fib(n - 1) + fib(n - 2)) % 1000000007
+  cache[n] = (fib2(n - 1) + fib2(n - 2)) % 1000000007
   return cache[n]
 }
 /**
@@ -41,12 +41,12 @@ function fib(n, cache = {}) {
  */
 
 // 动态规划
-var fib = function(n) {
-  if (n <= 1) {
+var fib3 = function(n) {
+  if (n <= 3) {
     return n
   }
-  var a = 0, b = 1, sum = 0;
-  for (var i = 2; i <= n; i++) {
+  var a = 2, b = 3, sum = 0;
+  for (var i = 4; i <= n; i++) {
     sum = (a + b) % 1000000007;
     a = b;
     b = sum;
@@ -58,4 +58,4 @@ var fib = function(n) {
  * 时间复杂度 O(N) ： 计算 f(n) 需循环 n 次，每轮循环内计算操作使用 O(1) 。
  * 空间复杂度 O(1) ： 几个标志变量使用常数大小的额外空间。
  */
-console.log(fib(8))
+console.log(fib3(8))
