@@ -214,7 +214,7 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceRoot}/offer/25.mergeTwoLists.js"
+      "program": "${workspaceRoot}/offer/25.mergeTwoLists(合并两个排序的链表).js"
     },
     // 21.调整数组顺序使奇数位于偶数前面
     {
