@@ -291,6 +291,16 @@
     {
       "type": "node",
       "request": "launch",
+      "name": "merge",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/main/88.merge(合并两个有序数组).js"
+    },
+    // 数字 1 的个数
+    {
+      "type": "node",
+      "request": "launch",
       "name": "countDigitOne",
       "skipFiles": [
         "<node_internals>/**"
