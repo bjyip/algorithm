@@ -7,9 +7,9 @@
  */
 // 双指针
 var twoSum = function(nums, target) {
-  var l = 0, r = nums.length - 1, s = 0;
-  while (l < r) {
-    s = nums[l] + nums[r];
+  var l = 0, r = nums.length - 1;
+  while (l <= r) {
+    var s = nums[l] + nums[r];
     if (s < target) {
       l++;
     } else if (s > target) {
