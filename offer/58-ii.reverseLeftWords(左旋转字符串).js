@@ -19,7 +19,7 @@ var reverseLeftWords = function(s, n) {
  * 新建两切片字符串，并将两切片拼接为结果字符串，无冗余操作，效率最高。
  */
 
-// 方法二：列表遍历拼接（若面试规定不允许使用 切片函数 ，则使用此方法。）
+// 方法二：列表遍历拼接（若不允许使用 切片函数 ，则使用此方法。）
 var reverseLeftWords = function(s, n) {
   var res = [];
   for (let i = n; i < s.length; i++) {
