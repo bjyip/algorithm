@@ -3,9 +3,9 @@ function isUpgrade(version1, version2) {
   var version1List = version1.split('.')
   var version2List = version2.split('.')
   for (var i = 0; i < version1List.length; i++) {
-    if (parseInt(version1List[i]) > parseInt(version2List[i])) {
+    if (parseInt(version1List[i]) < parseInt(version2List[i])) {
       return true
-    } else if (parseInt(version1List[i]) < parseInt(version2List[i])) {
+    } else if (parseInt(version1List[i]) > parseInt(version2List[i])) {
       return false
     }
   }
@@ -13,36 +13,29 @@ function isUpgrade(version1, version2) {
 }
 
 // 版本字符串长度不一样
-function compareVersion(version1, version2) {
-  const arr1 = version1.split('.')
-  const arr2 = version2.split('.')
-  const length1 = arr1.length
-  const length2 = arr2.length
-  const minlength = Math.min(length1, length2)
-  let i = 0
-  for (i; i < minlength; i++) {
-    const a = parseInt(arr1[i])
-    const b = parseInt(arr2[i])
-    if (a > b) {
+function compareVersion(v1, v2) {
+  var arr1 = v1.split('.')
+  var arr2 = v2.split('.')
+  var len = Math.min(arr1.length, arr2.length)
+  for (let i = 0; i < len; i++) {
+    if (parseInt(arr2[i]) > parseInt(arr1[i])) {
       return 1
-    } else if (a < b) {
+    } else if (parseInt(arr2[i]) < parseInt(arr1[i])) {
       return -1
     }
   }
-  if (length1 > length2) {
-    for (let j = i; j < length1; j++) {
-      if (parseInt(arr1[j]) !== 0) {
+  if (arr2.length > arr1.length) {
+    for (let i = len; i < arr2.length; i++) {
+      if (parseInt(arr2[i]) > 0) {
         return 1
       }
     }
-    return 0
-  } else if (length1 < length2) {
-    for (let j = i; j < length2; j++) {
-      if (parseInt(arr2[j]) !== 0) {
+  } else if (arr2.length < arr1.length) {
+    for (let i = len; i < arr1.length; i++) {
+      if (parseInt(arr1[i]) > 0) {
         return -1
       }
     }
-    return 0
   }
   return 0
 }
