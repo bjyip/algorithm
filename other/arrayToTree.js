@@ -16,15 +16,18 @@ var arr = [
 
 ]
 
-// 两个循环
+// 两个循环（利用引用类型特性）
 function arrayToTree1(array) {
   const cloneArray = JSON.parse(JSON.stringify(array))
-  const result = cloneArray.filter(parent => {
+  const result = []
+  cloneArray.forEach(parent => {
     const branchArr = cloneArray.filter(child => parent.id === child.pid);
     if (branchArr.length) {
       parent.children = branchArr
     }
-    return parent.pid === 0;
+    if (parent.pid === 0) {
+      result.push(parent)
+    }
   })
   return result
 }
@@ -52,5 +55,5 @@ function arrayToTree2(array) {
   return result;
 }
 
-const tree = arrayToTree2(arr)
+const tree = arrayToTree1(arr)
 console.log(JSON.stringify(tree))
