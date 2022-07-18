@@ -30,9 +30,9 @@ class EventEmitter {
   once(type, cb) {
     const wrap = (...args) => {
       cb(...args)
+      // 此处使用this.off，wrap要声明为箭头函数（或者在上一层暂存this），让this指向EventEmitter类，不然会指向undefined
       this.off(type, wrap)
     }
-    // 此处要使用this，wrap要声明箭头函数（或者在上一层暂存this），让this指向EventEmitter类，不然会指向undefined
     this.on(type, wrap)
   }
 }
