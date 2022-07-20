@@ -15,12 +15,10 @@
 // 输出：No
 
 function getString(str) {
-  var arr = str.split('')
   var stack = []
-  for (let j = 0; j < arr.length; j++) {
-    var current = arr[j]
-    if (stack.length === 0 || stack[stack.length - 1] !== current) {
-      stack.push(arr[j])
+  for (let i = 0; i < str.length; i++) {
+    if (stack.length === 0 || stack[stack.length - 1] !== str[i]) {
+      stack.push(str[i])
     } else {
       stack.pop()
     }
