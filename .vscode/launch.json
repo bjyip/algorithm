@@ -5,6 +5,16 @@
   "version": "0.2.0",
   "configurations": [
     /** ------------------------其他------------------------*/
+    // 判断两个对象是否相等
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "isObjectValueEqual",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/other/isObjectValueEqual.js"
+    },
     // 数组排序
     {
       "type": "node",
