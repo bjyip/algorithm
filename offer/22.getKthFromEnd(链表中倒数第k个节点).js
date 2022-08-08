@@ -34,10 +34,12 @@ var getKthFromEnd = function(head, k) {
   let fast = head, slow = head;
   
   while (fast && k > 0) {
-    [fast, k] = [fast.next, k - 1];
+    fast = fast.next
+    k--
   }
   while (fast) {
-    [fast, slow] = [fast.next, slow.next];
+    fast = fast.next
+    slow = slow.next
   }
   return slow;
 };
