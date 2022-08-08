@@ -5,18 +5,6 @@ class LimitPromise {
     this.count = 0 // 目前并发的数量
     this.taskQueue = [] // 如果并发数等于最大限制，则把新加的异步操作用数组存起来
   }
-  // 利用promise包装传入的函数
-  run(asyncFn, ...args) {
-    return new Promise((resolve, reject) => {
-      const task = this.createTask(asyncFn, args, resolve, reject)
-      // 超出最大限制数时，把任务放入数组，每次执行完异步回调后就将操作按先入先出的顺序取出，然后执行，保证最大并发数在限制范围内。
-      if (this.count >= this.limit) {
-        this.taskQueue.push(task)
-      } else {
-        task()
-      }
-    })
-  }
   // 创建任务
   createTask(asyncFn, args, resolve, reject) {
     return () => {
@@ -35,6 +23,18 @@ class LimitPromise {
       // return返回的函数执行时，this.count + 1
       this.count++
     }
+  }
+  // 利用promise包装传入的函数
+  run(asyncFn, ...args) {
+    return new Promise((resolve, reject) => {
+      const task = this.createTask(asyncFn, args, resolve, reject)
+      // 超出最大限制数时，把任务放入数组，每次执行完异步回调后就将操作按先入先出的顺序取出，然后执行，保证最大并发数在限制范围内。
+      if (this.count >= this.limit) {
+        this.taskQueue.push(task)
+      } else {
+        task()
+      }
+    })
   }
 }
 
