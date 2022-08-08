@@ -54,7 +54,7 @@ var merge2 = function(nums1, m, nums2, n) {
 
 
 // 逆向双指针（未解决）
-var merg3 = function(nums1, m, nums2, n) {
+var merge3 = function(nums1, m, nums2, n) {
   let p1 = m - 1, p2 = n - 1;
   let tail = m + n - 1;
   var cur;
@@ -80,7 +80,7 @@ var merg3 = function(nums1, m, nums2, n) {
  */
 
 // 不修改原来数组的合并
-function merg4(nums1, nums2) {
+function merge4(nums1, nums2) {
   var p1 = 0, p2 = 0, cur, res = []
   while (p1 < nums1.length && p2 < nums2.length) {
     if (nums1[p1] < nums2[p1]) {
@@ -93,13 +93,13 @@ function merg4(nums1, nums2) {
     res.push(cur)
   }
   if (p1 === nums1.length) {
-    res = res.concat(nums2.slice(p2))
+    res.push(...nums2.slice(p2))
   } else {
-    res = res.concat(nums1.slice(p1))
+    res.push(...nums1.slice(p1))
   }
   return res
 }
-console.log(merg4([1,2,3], [2,5,6,7,8,9]))
+console.log(merge4([1,2,3], [2,5,6,7,8,9]))
 console.log('-----------------')
 
 var nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6,7,8,9], n = 6
