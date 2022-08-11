@@ -34,7 +34,7 @@ const tree = [{
     label: '二级 3-2'
   }]
 }]
-// 只需要考虑自身的节点满足条件即可,不用带上父节点
+// 只需要考虑自身的节点满足条件即可，不用带上父节点（保留层级关系）
 function filterTree1(nodes, query) {
   if (!nodes) {
     return []
@@ -83,6 +83,6 @@ function filterTree2(nodes, query) {
 }
 
 
-console.log(JSON.stringify(filterTree1(tree, '二级 1-1')))
+console.log(JSON.stringify(filterTree1(tree, '1-1')))
 console.log('---')
-console.log(JSON.stringify(filterTree2(tree, '二级 1-1')))
+console.log(JSON.stringify(filterTree2(tree, '1-1')))
