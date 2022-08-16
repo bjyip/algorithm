@@ -5,6 +5,16 @@
   "version": "0.2.0",
   "configurations": [
     /** ------------------------其他------------------------*/
+    // 输入数结构某元素的查找路径
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "findPath",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/other/findPath.js"
+    },
     // 判断两个对象是否相等
     {
       "type": "node",
