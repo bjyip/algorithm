@@ -5,6 +5,16 @@
   "version": "0.2.0",
   "configurations": [
     /** ------------------------其他------------------------*/
+    // 求字符串中无重复字符的最长子串
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "getLonggestSubstring",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/other/getLonggestSubstring.js"
+    },
     // 输入数结构某元素的查找路径
     {
       "type": "node",
