@@ -29,6 +29,7 @@ class EventEmitter {
   // 单次监听函数
   once(type, cb) {
     const wrap = (...args) => {
+      // 箭头函数没有arguments，所以需要用rest
       cb(...args)
       // 此处使用this.off，wrap要声明为箭头函数（或者在上一层暂存this），让this指向EventEmitter类，不然会指向undefined
       this.off(type, wrap)
