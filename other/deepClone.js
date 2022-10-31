@@ -1,9 +1,8 @@
 function deepClone (source, hash = new WeakMap()) {
-  if (typeof source !== 'object' || !source) return source
+  if (!source || typeof source !== 'object') return source
   // 查哈希表，处理循环引用，处理引用丢失
   if (hash.has(source)) return hash.get(source)
   const target = Array.isArray(source) ? [] : {}
-  hash.set(source, target)
   for (const key in source) {
     if (Object.prototype.hasOwnProperty.call(source, key)) {
       if (typeof source[key] === 'object') {
@@ -13,6 +12,7 @@ function deepClone (source, hash = new WeakMap()) {
       }
     }
   }
+  hash.set(source, target)
   return target
 }
 
