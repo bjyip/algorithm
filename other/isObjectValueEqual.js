@@ -1,5 +1,25 @@
 // 判断两个对象是否相等
 function isObjectValueEqual(obj1, obj2) {
+	if (obj1 === obj2) return true
+	const type1 = Object.prototype.toString.call(obj1)
+	const type2 = Object.prototype.toString.call(obj2)
+	if (type1 !== type2) return false
+	if (!['[object Object]', '[object Array]'].includes(type1) ) {
+		return obj1 === obj2
+	}
+	if (Object.keys(obj1).length !== Object.keys(obj2).length) return false
+	for (let prop in obj1) {
+		if (!Object.hasOwnProperty.call(obj2, prop)) return false
+		if (typeof obj1[prop] === 'object') {
+			return isObjectValueEqual(obj1[prop], obj2[prop])
+		} else {
+			return obj1[prop] === obj2[prop]
+		}
+	}
+	return true
+}
+
+function isObjectValueEqual(obj1, obj2) {
 	// 判断两个对象是否指向同一内存，指向同一内存返回 true
 	if (obj1 === obj2) return true
 	const type1 = Object.prototype.toString.call(obj1)
