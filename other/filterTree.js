@@ -34,25 +34,23 @@ const tree = [{
     label: '二级 3-2'
   }]
 }]
-// 只需要考虑自身的节点满足条件即可，不用带上父节点（保留层级关系）
+
+// 只需要考虑自身的节点满足条件即可，不用带上父节点
 function filterTree1(nodes, query) {
   if (!nodes) {
     return []
   }
   const cloneNodes = JSON.parse(JSON.stringify(nodes))
-  let newNodes = []
+  const newNodes = []
   for (let node of cloneNodes) {
     // 递归找出node下面符合条件的子节点
     const subs = filterTree1(node.children, query)
+    delete node.children
     if (node.label.indexOf(query) > -1) {
-      if (!subs.length) {
-        delete node.children
-      }
       newNodes.push(node)
-    } else {
-      if (subs.length) {
-        newNodes.push(...subs)
-      }
+    }
+    if (subs.length) {
+      newNodes.push(...subs)
     }
   }
   return newNodes
