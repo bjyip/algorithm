@@ -5,17 +5,17 @@ function getLonggestSubstring(s) {
   let cur = '' // 滑动窗口
   let str = '' // 最长字串
   while (right < s.length) {
+    // slice不包含序号为right的元素
     cur = s.slice(left, right)
     if (cur.includes(s[right])) {
       // 滑动窗口中存在当前字符，左指针前移，切掉原字符串第一个字符
       left++
-      continue
     } else {
-      // 滑动窗口中不存在当前字符，右指针前移，切掉原字符串第一个字符
+      // 滑动窗口中不存在当前字符，右指针前移，增加字符
       cur += s[right]
       right++
+      str = str.length > cur.length ? str : cur
     }
-    str = str.length > cur.length ? str : cur
   }
   return str
 }
