@@ -4,7 +4,7 @@ function isObjectValueEqual(obj1, obj2) {
 	const type1 = Object.prototype.toString.call(obj1)
 	const type2 = Object.prototype.toString.call(obj2)
 	if (type1 !== type2) return false
-	if (!['[object Object]', '[object Array]'].includes(type1) ) {
+	if (!['[object Object]', '[object Array]'].includes(type1)) {
 		return obj1 === obj2
 	}
 	if (Object.keys(obj1).length !== Object.keys(obj2).length) return false
@@ -26,8 +26,8 @@ function isObjectValueEqual(obj1, obj2) {
 	const type2 = Object.prototype.toString.call(obj2)
 	// 判断两个对象类型是否一致，不一致返回 false
 	if (type1 !== type2) return false
-	// 判断两个参数是否为数组或者对象，都不是则直接返回是否一致
-	if (!['[object Object]', '[object Array]'].includes(type1) ) {
+	// 数据类型一致时，判断两个参数是否为数组或者对象，都不是则直接返回是否一致
+	if (!['[object Object]', '[object Array]'].includes(type1)) {
 		return obj1 === obj2
 	}
 	// 判断两个对象键值数组长度是否一致，不一致返回 false
@@ -43,6 +43,7 @@ function isObjectValueEqual(obj1, obj2) {
 			return obj1[prop] === obj2[prop]
 		}
 	}
+	// 两个空对象/空数组相等，返回true
 	return true
 }
 let obj1 = {
