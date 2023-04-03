@@ -41,7 +41,7 @@ function selectSort(arr) {
  */
 
 
-// 快速排序
+// 快速排序（从左排到右）
 function quickSort(arr) {
   if (arr.length <= 1) {
     return arr
@@ -63,16 +63,23 @@ function quickSort(arr) {
  * 空间复杂度：O(logn)
  */
 
-// 插入排序
+// 插入排序（从左排到右）
 function insertSort(arr) {
   for (let i = 1; i < arr.length; i++) {
-    var current = arr[i]
-    var prevIndex = i - 1
-    while (prevIndex >= 0 && arr[prevIndex] > current) {
-      arr[prevIndex + 1] = arr[prevIndex]
-      prevIndex--
+    // 1. 把本次要操作的数字记录下来
+    var cur = arr[i]
+    // 2. 向前循环开始比较，步长: -1
+    // 开始: 当前索引 - 1, i - 1
+    var prev = i - 1
+    // 条件: 什么时候不停 ? 前一个比cur大，什么时候停 ? 前一个比cur小（说明前面所有都比cur小）
+    while (arr[prev] > cur) {
+      // 如果前一个比我大, 那么直接让前一个替换我现在的位置
+      arr[prev + 1] = arr[prev]
+      prev--
     }
-    arr[prevIndex + 1] = current
+    // 3. 循环结束, 说明 arr[prev] < cur
+    // 说明 prev 位置的数据比 cur 小, 应该把 cur 赋值给 [prev + 1] 位置的数据
+    arr[prev + 1] = cur
   }
   return arr
 }
