@@ -1,7 +1,7 @@
 Array.prototype.myForEach = function(fn, context) {
   // this指向调用myMap函数的数组
   if (this.constructor !== Array) {
-    throw TypeError(this + '.myMap is not a function')
+    throw TypeError(this + '.myForEach is not a function')
   }
   // 如果 context 参数有值，则每次 callback 函数被调用时，this 都会指向 context 参数。
   // 如果省略了 context 参数，或者其值为 null 或 undefined，this 则指向全局对象。
