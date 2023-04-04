@@ -35,11 +35,14 @@ var isValid = function(s) {
 	var stack = []
 	for (let i = 0; i < s.length; i++) {
 		if (hash[s[i]]) {
+			// 如果是左边括号直接push进stack
 			stack.push(s[i])
+		} else if (s[i] === hash[stack[stack.length - 1]]) {
+			// 如果是右边括号，跟stack的最后一个能匹配，能则pop掉stack最后一个
+			stack.pop()
 		} else {
-			if (s[i] !== hash[stack.pop()]) {
-				return false
-			}
+			// 如果是右边括号，跟stack的最后一个不能匹配，直接return false
+			return false
 		}
 	}
 	return stack.length === 0
