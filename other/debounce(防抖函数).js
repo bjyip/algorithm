@@ -1,8 +1,8 @@
 function debounce(fn, wait) {
   var timer = null
   return function() {
-    timer = setInterval(() => {
-      clearInterval(timer)
+    clearTimeout(timer)
+    timer = setTimeout(() => {
       fn.apply(this, arguments)
     }, wait);
   }
